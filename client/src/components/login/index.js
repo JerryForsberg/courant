@@ -81,17 +81,23 @@ function log(props) {
                                     onChange={userPasswordValue}
                                 />
                             </div>
-                            {/* SUBMIT */}
+                            {/* Sign in */}
                             <button type="submit"
                                 onClick={handleSubmit}
                                 className="btn btn-dark login-button">
                                 Sign in
                             </button>
-                            <div className="text-center mt-5 mb-3">
-                                <p>Forgot Password ?</p>
-                            </div>
+                            {/* Forgot Password */}
+                            <button type="submit">
+                                <div className="text-center mt-5 mb-3">
+                                    <p>Forgot Password ?</p>
+                                </div>
+                            </button>
                             <span className="line mb-5"></span>
-                            <button type="submit" className="btn btn-secondary login-buttons">Create Account</button>
+                            {/* Create Account */}
+                            <button type="submit" className="btn btn-secondary login-buttons">
+                                Create Account
+                            </button>
                         </form>
                     </div>
                     {/* <!--right side hero--> */}
