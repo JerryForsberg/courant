@@ -1,8 +1,9 @@
 import React from "react";
+import Log from "../components/login";
 
 function login() {
     return (
-     < components />
+     <Log />
       );
   }
   

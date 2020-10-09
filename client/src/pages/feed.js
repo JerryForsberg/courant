@@ -1,8 +1,9 @@
 import React from "react";
+import Feed from "../components/feed";
 
 function feed() {
     return (
-     < components />
+     < Feed />
       );
   }
   
