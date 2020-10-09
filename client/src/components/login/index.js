@@ -46,83 +46,60 @@ function log(props) {
         setPassword("");
     }
 
-    //******* need to stylize the look of this, but MVP for now
     return (
         <div>
-        <div className="container-fluid">
-        <div className="row">
-            <div className="col-6 login-form">
-                <div className="mt-5 text-center mb-5">
-                    <img src="./logo.svg" alt="logo" className="login-logo"/>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-6 login-form">
+                        <div className="mt-5 text-center mb-5">
+                            <img src="../images/logo.svg" alt="logo" className="login-logo" />
+                        </div>
+                        <form>
+                            {/* EMAIL */}
+                            <div className="form-group">
+                                <label for="exampleInputEmail1" className="login-label">Email address</label>
+                                <input
+                                    className="form-input form-control login-input"
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@email.com"
+                                    value={email}
+                                    onChange={userEmailValue}
+                                />
+                            </div>
+                            {/* PASSWORD */}
+                            <div className="form-group">
+                                <label for="exampleInputPassword1" className="login-label">Password</label>
+                                <input
+                                    className="form-input form-control login-input"
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={userPasswordValue}
+                                />
+                            </div>
+                            {/* SUBMIT */}
+                            <button type="submit"
+                                onClick={handleSubmit}
+                                className="btn btn-dark login-button">
+                                Sign in
+                            </button>
+                            <div className="text-center mt-5 mb-3">
+                                <p>Forgot Password ?</p>
+                            </div>
+                            <span className="line mb-5"></span>
+                            <button type="submit" className="btn btn-secondary login-buttons">Create Account</button>
+                        </form>
+                    </div>
+                    {/* <!--right side hero--> */}
+                    <div className="col-6 login-hero">
+                        <h1 className="login-hero-text">TELL YOUR<br />STORY</h1>
+                    </div>
                 </div>
-                <form className="">
-                    <div className="form-group">
-                        <label for="exampleInputEmail1" className="login-label">Email address</label>
-                        <input type="email" className="form-control login-input" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-
-                    </div>
-                    <div className="form-group">
-                        <label for="exampleInputPassword1" className="login-label">Password</label>
-                        <input type="password" className="form-control login-input" id="exampleInputPassword1"/>
-                    </div>
-                    <button type="submit" className="btn btn-dark login-button">Sign in</button>
-                    <div className="text-center mt-5 mb-3">
-                        <p>Forgot password ?</p>
-                    </div>
-                    <span className="line mb-5"></span>
-                    <button type="submit" className="btn btn-secondary login-buttons">Create Account</button>
-                </form>
             </div>
-{/* <!--right side hero--> */}
-            <div className="col-6 login-hero">
-                <h1 className="login-hero-text">TELL YOUR<br/>STORY</h1>
-            </div>
-        </div>
-    </div>
-         <div classNameName="container">
-            <form>
-               <h2>Login</h2>
-                 <div classNameName="label-group">
-                     <label classNameName="form-label" htmlFor="email">
-                         Email
-                     </label>
-
-                     <input
-                         classNameName="form-input"
-                         type="text"
-                        id="email"
-                        name="email"
-                        placeholder="you@email.com"
-                        value={email}
-                        onChange={userEmailValue}
-                    />
-                </div>
-
-                <div classNameName="label-group">
-                    <label classNameName="form-label" htmlFor="password">
-                        Password
-                    </label>
-                    <input
-                        classNameName="form-input"
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={userPasswordValue}
-                    />
-                </div>
-
-                <button
-                    classNameName="btn form-submit-btn"
-                    onClick={handleSubmit}
-                    type="submit"
-                >
-                    Login
-                </button>
-            </form>
-
-        </div>
         </div>
     );
 }
