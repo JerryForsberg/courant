@@ -36,7 +36,7 @@ body {
         border-radius: 0px;
     }
     .login-hero {
-        background-image: url("./login-pic.svg");
+        background-image: url(/images/login-pic.svg);
         background-size: cover;
     }
     .line {
@@ -44,7 +44,7 @@ body {
        display: block;
     }
     .sign-up-hero {
-        background-image: url("./sign-up-hero.svg");
+        background-image: url(/images/sign-up-hero.svg);
         background-size: cover;
     }
     .sign-up-hero-text{
