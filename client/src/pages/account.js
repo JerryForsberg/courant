@@ -1,8 +1,9 @@
 import React from "react";
+import Accnt from "../components/account";
 
 function account() {
     return (
-     < components />
+     < Accnt />
       );
   }
   

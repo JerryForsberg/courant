@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/navbar";
@@ -10,7 +12,7 @@ import Home from "./pages/homepage";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Upload from "./pages/uploadwork";
-
+import Profile from "./pages/profile"
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/upload" component={Upload} />
-
+<Route exact path="/profile" component={Profile} />
       {/* <Route exact path="/" component={} /> */}
       
       <Footer />

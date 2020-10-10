@@ -6,7 +6,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:dev": "concurrently \"npm run client\"",
     "deploy-test": "NODE_ENV=production node app.js",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
@@ -23,7 +23,7 @@
   "license": "ISC",
   "homepage": "https://github.com/JerryForsberg/courant",
   "devDependencies": {
-    "concurrently": "^4.1.0",
+    "concurrently": "^4.1.2",
     "nodemon": "^2.0.4"
   },
   "dependencies": {

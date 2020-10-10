@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./style.css";
-import API from "../../../utils/API";
+// import API from "../../../utils/API";
 import axios from "axios";
 
-function log() {
+function log(props) {
 
     // useState to grab the email and password from the form
     const [email, setEmail] = useState();
@@ -46,51 +46,64 @@ function log() {
         setPassword("");
     }
 
-    //******* need to stylize the look of this, but MVP for now
     return (
-        <div className="container">
-            <form>
-                <h2>Login</h2>
-                <div className="label-group">
-                    <label className="form-label" htmlFor="email">
-                        Email
-                    </label>
-
-                    <input
-                        className="form-input"
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="you@email.com"
-                        value={email}
-                        onChange={userEmailValue}
-                    />
+        <div>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-6 login-form">
+                        <div className="mt-5 text-center mb-5">
+                            <img src="../images/logo.svg" alt="logo" className="login-logo" />
+                        </div>
+                        <form>
+                            {/* EMAIL */}
+                            <div className="form-group">
+                                <label for="exampleInputEmail1" className="login-label">Email address</label>
+                                <input
+                                    className="form-input form-control login-input"
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@email.com"
+                                    value={email}
+                                    onChange={userEmailValue}
+                                />
+                            </div>
+                            {/* PASSWORD */}
+                            <div className="form-group">
+                                <label for="exampleInputPassword1" className="login-label">Password</label>
+                                <input
+                                    className="form-input form-control login-input"
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={userPasswordValue}
+                                />
+                            </div>
+                            {/* Sign in */}
+                            <button type="submit"
+                                onClick={handleSubmit}
+                                className="btn btn-dark login-button">
+                                Sign in
+                            </button>
+                            {/* Forgot Password */}
+                                <div className="text-center mt-5 mb-3">
+                                    Forgot Password ?
+                                </div>
+                            <span className="line mb-5"></span>
+                            {/* Create Account */}
+                            <button type="submit" className="btn btn-secondary login-buttons">
+                                Create Account
+                            </button>
+                        </form>
+                    </div>
+                    {/* <!--right side hero--> */}
+                    <div className="col-6 login-hero">
+                        <h1 className="login-hero-text">TELL YOUR<br />STORY</h1>
+                    </div>
                 </div>
-
-                <div className="label-group">
-                    <label className="form-label" htmlFor="password">
-                        Password
-                    </label>
-                    <input
-                        className="form-input"
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={userPasswordValue}
-                    />
-                </div>
-
-                <button
-                    className="btn form-submit-btn"
-                    onClick={handleSubmit}
-                    type="submit"
-                >
-                    Login
-                </button>
-            </form>
-
+            </div>
         </div>
     );
 }

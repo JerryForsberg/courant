@@ -1,0 +1,63 @@
+body {
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+    .login-hero, .sign-up-hero {
+    background-color: black;
+    
+    }
+    .login-form, .sign-up-form  {
+        
+        height: 100vh;
+    }
+    .login-label {
+        font-size: 70%;
+    }
+    .login-buttons, .login-button {
+      width: 690px;
+      height: 40px;
+      border-radius: 0px;
+    }
+    .login-button {
+    background-color: #070600;
+    }
+    .login-logo {
+        width: 35%;
+    }
+    .login-hero-text{
+        font-weight: 600;
+        color: #FFFCFC;
+        text-align: center;
+        margin-top: 50vh;
+        
+    }
+    .login-input {
+        border-radius: 0px;
+    }
+    .login-hero {
+        background-image: url(/images/login-pic.svg);
+        background-size: cover;
+    }
+    .line {
+       border-bottom: 1px solid grey; 
+       display: block;
+    }
+    .sign-up-hero {
+        background-image: url(/images/sign-up-hero.svg);
+        background-size: cover;
+    }
+    .sign-up-hero-text{
+        font-weight: 600;
+        color: #FFFCFC;
+        text-align: center;
+        margin-top: 20vh;
+        font-size:100px;
+    }
+    .sign-up-hero-text2{
+        font-weight: 600;
+        color: #FFFCFC;
+        text-align: center;
+       
+        font-size:50px;
+    }
