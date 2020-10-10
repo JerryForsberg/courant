@@ -17,7 +17,6 @@ import Profile from "./pages/profile"
 function App() {
   return (
     <Router>
-      <Navbar />
       <Route exact path="/" component={Home} />
       <Route exact path="/account" component={Account} />
       <Route exact path="/discover" component={Discover} />
@@ -25,7 +24,8 @@ function App() {
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/upload" component={Upload} />
-<Route exact path="/profile" component={Profile} />
+      <Route exact path="/profile" component={Profile} />
+      
       {/* <Route exact path="/" component={} /> */}
       
       <Footer />
