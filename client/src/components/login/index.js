@@ -88,11 +88,9 @@ function log(props) {
                                 Sign in
                             </button>
                             {/* Forgot Password */}
-                            <button type="submit">
                                 <div className="text-center mt-5 mb-3">
-                                    <p>Forgot Password ?</p>
+                                    Forgot Password ?
                                 </div>
-                            </button>
                             <span className="line mb-5"></span>
                             {/* Create Account */}
                             <button type="submit" className="btn btn-secondary login-buttons">
