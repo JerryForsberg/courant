@@ -20,7 +20,9 @@ function nav() {
                     </div>
                 </div>
                 <div className="text-center">
+                    <Link to="/">
                     <img src="../images/logo.svg" alt="logo" className="login-logo" />
+                    </Link>
                 </div>
                 <div className="row logins">
                     <div >
