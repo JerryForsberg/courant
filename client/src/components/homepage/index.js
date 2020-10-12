@@ -3,7 +3,7 @@ import "./style.css";
 
 function home () {
     return (
-        <div>
+        <div className="container">
             <p>HOMEPAGE content</p>
         </div>
     );
