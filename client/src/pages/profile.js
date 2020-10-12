@@ -1,10 +1,14 @@
 import React from "react";
 import Profile from "../components/profile";
+import Profnav from "../components/profnav";
 
 function profile() {
     return (
-     <Profile />
-      );
-  }
-  
-  export default profile;
+        <div>
+            <Profnav />
+            <Profile />
+        </div>
+    );
+}
+
+export default profile;

@@ -4,11 +4,10 @@ import "./style.css";
 function profile () {
     return (
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-12">
-                <button type="button" className="btn btn-dark btn-lg btn-block">Upload</button>
-                </div>
-            </div>
+            <img/>
+            <p>
+                Placeholder for profile stuff maybe shows your posts
+            </p>
         </div>
     );
 }
