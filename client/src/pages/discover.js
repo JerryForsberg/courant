@@ -1,9 +1,13 @@
 import React from "react";
 import Disc from "../components/discover";
+import Sidenav from "../components/sidenav";
 
 function discover() {
     return (
-     < Disc />
+        <div>
+        <Sidenav/>
+        < Disc />
+        </div>
       );
   }
   

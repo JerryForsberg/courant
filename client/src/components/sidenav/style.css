@@ -5,25 +5,21 @@ body {
     color: black;
 }
 
-.nav {
+.label {
     padding: 5px;
 }
 
-.navLinks {
-
-}
-
-.logins {
-
-}
-
-.navlink {
+.info {
     color: black;
     background-color: white;
-    padding: 5px;
+    padding: 10px;
+    padding-top: 5px;
 }
 
-.navlink:hover {
+.info:hover {
     color: white;
+    width: 100%;
     background-color: black;
+
 }
+
