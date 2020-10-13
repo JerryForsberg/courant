@@ -3,8 +3,12 @@ import "./style.css";
 
 function home () {
     return (
-        <div>
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-lg-12 hero-top-home">
             <p>HOMEPAGE</p>
+            </div>
+            </div>
         </div>
     );
 }
