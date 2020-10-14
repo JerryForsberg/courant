@@ -5,23 +5,20 @@ import { Link } from "react-router-dom";
 // pass in props for genres and popular
 function nav() {
     return (
-        <div className="sidenav flex-column">
+        <div className="nav flex-column">
             <div className="genre">
                 <div className="label">Genre</div>
-                <ol>
-                    <Link className="info" to="/">
+                <a>
+                    <Link className="nav-link info" to="/">
                         EXAMPLE
                     </Link>
-                </ol>
-            </div>
-
-            <div className="popular mt-5">
-                <div className="label">Popular</div>
-                <ol>
-                    <Link className="info" to="/">
+                </a>
+             <div className="label mt-5">Popular</div>
+                <a>
+                    <Link className="nav-link info" to="/">
                     EXAMPLE
                     </Link>
-                </ol>
+                </a>
             </div>
         </div>
     );
