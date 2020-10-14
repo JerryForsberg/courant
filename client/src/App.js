@@ -17,8 +17,6 @@ import Profile from "./pages/profile";
 function App() {
   return (
     <Router>
-      {/* navbar on every page need statement to change if logged in */}
-      <Navbar/>
 
       <Route exact path="/" component={Home} />
       <Route exact path="/account" component={Account} />

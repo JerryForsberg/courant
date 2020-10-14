@@ -6,18 +6,18 @@ import { Link } from "react-router-dom";
 function nav() {
     return (
         <div className="container-fluid">
-            <div className="nav mx-auto mt-2 mb-5">
+            <nav className="nav navbar navbar-expand-lg justify-content-center mt-2 mb-5">
                 <div className="row navLinks">
-                    <div >
-                        <Link className="navlink" to="/discover">
+                    <a>
+                        <Link className="nav-link" to="/discover">
                             DISCOVER
-                            </Link>
-                    </div>
-                    <div >
-                        <Link className="navlink" to="/about">
+                        </Link>
+                    </a>
+                    <a>
+                        <Link className="nav-link" to="/about">
                             ABOUT
                             </Link>
-                    </div>
+                    </a>
                 </div>
                 <div className="text-center">
                     <Link to="/">
@@ -25,18 +25,18 @@ function nav() {
                     </Link>
                 </div>
                 <div className="row logins">
-                    <div >
-                        <Link className="navlink" to="/login">
+                    <a>
+                        <Link className="nav-link" to="/login">
                             SIGN IN
                             </Link>
-                    </div>
-                    <div >
-                        <Link className="navlink" to="/signup">
+                    </a>
+                    <a>
+                        <Link className="nav-link" to="/signup">
                             SIGN UP
                             </Link>
-                    </div>
+                    </a>
                 </div>
-            </div>
+            </nav>
         </div>
     );
 }
