@@ -9,14 +9,6 @@ body {
     padding: 5px;
 }
 
-.navLinks {
-
-}
-
-.logins {
-
-}
-
 .nav-link {
     color: black;
     background-color: white;
@@ -27,3 +19,4 @@ body {
     color: white;
     background-color: black;
 }
+

@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 function nav() {
     return (
         <div className="container-fluid">
-            <nav className="nav navbar navbar-expand-lg justify-content-center mt-2 mb-5">
-                <div className="row navLinks">
+            <nav className="nav nav-fill navbar navbar-expand-lg justify-content-center mt-2 mb-5">
+                <div className="row navLinks nav-item">
                     <a>
                         <Link className="nav-link" to="/discover">
                             DISCOVER
@@ -19,12 +19,12 @@ function nav() {
                             </Link>
                     </a>
                 </div>
-                <div className="text-center">
+                <div className="text-center nav-item">
                     <Link to="/">
                     <img src="../images/logo.svg" alt="logo" className="login-logo" />
                     </Link>
                 </div>
-                <div className="row logins">
+                <div className="row logins nav-item justify-content-end">
                     <a>
                         <Link className="nav-link" to="/login">
                             SIGN IN
