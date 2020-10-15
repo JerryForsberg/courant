@@ -1,10 +1,14 @@
 import React from "react";
 import Upload from "../components/uploadwork";
+import Navbar from "../components/navbar";
 
 function uploadwork() {
     return (
-     < Upload />
-      );
-  }
-  
-  export default uploadwork;
+        <div>
+            <Navbar />
+            <Upload />
+        </div>
+    );
+}
+
+export default uploadwork;
