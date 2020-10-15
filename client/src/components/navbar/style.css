@@ -9,21 +9,14 @@ body {
     padding: 5px;
 }
 
-.navLinks {
-
-}
-
-.logins {
-
-}
-
-.navlink {
+.nav-link {
     color: black;
     background-color: white;
     padding: 5px;
 }
 
-.navlink:hover {
+.nav-link:hover {
     color: white;
     background-color: black;
 }
+

@@ -6,37 +6,37 @@ import { Link } from "react-router-dom";
 function nav() {
     return (
         <div className="container-fluid">
-            <div className="nav mx-auto mt-2 mb-5">
-                <div className="row navLinks">
-                    <div >
-                        <Link className="navlink" to="/discover">
+            <nav className="nav nav-fill navbar navbar-expand-lg justify-content-center mt-2 mb-5">
+                <div className="row navLinks nav-item">
+                    <a>
+                        <Link className="nav-link" to="/discover">
                             DISCOVER
-                            </Link>
-                    </div>
-                    <div >
-                        <Link className="navlink" to="/about">
+                        </Link>
+                    </a>
+                    <a>
+                        <Link className="nav-link" to="/about">
                             ABOUT
                             </Link>
-                    </div>
+                    </a>
                 </div>
-                <div className="text-center">
+                <div className="text-center nav-item">
                     <Link to="/">
                     <img src="../images/logo.svg" alt="logo" className="login-logo" />
                     </Link>
                 </div>
-                <div className="row logins">
-                    <div >
-                        <Link className="navlink" to="/login">
+                <div className="row logins nav-item justify-content-end">
+                    <a>
+                        <Link className="nav-link" to="/login">
                             SIGN IN
                             </Link>
-                    </div>
-                    <div >
-                        <Link className="navlink" to="/signup">
+                    </a>
+                    <a>
+                        <Link className="nav-link" to="/signup">
                             SIGN UP
                             </Link>
-                    </div>
+                    </a>
                 </div>
-            </div>
+            </nav>
         </div>
     );
 }

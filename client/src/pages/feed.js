@@ -1,10 +1,14 @@
 import React from "react";
 import Feed from "../components/feed";
+import Navbar from "../components/navbar";
 
 function feed() {
     return (
-     < Feed />
-      );
-  }
-  
-  export default feed;
+        <div>
+            <Navbar />
+            < Feed />
+        </div>
+    );
+}
+
+export default feed;
