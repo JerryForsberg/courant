@@ -4,11 +4,11 @@ import axios from "axios";
 export default {
     // USER ROUTES
     login: (email, password) => {
-        return axios.post("/api/user/login", {
-          name,
-          password,
-        });
-      },
+      return axios.post("/api/user/login", {
+        email,
+        password,
+      });
+    },
 
     logout: () => axios.get("/api/user/logout"),
 
@@ -17,6 +17,7 @@ export default {
     },
 
     signup: (userInfo) => {
+      console.log(userInfo);
         return axios.post("/api/user/signup", userInfo);
     }
 
