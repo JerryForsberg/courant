@@ -1,11 +1,16 @@
 const express = require("express");
 const session = require("express-session");
-const passport = require("passport");
+const passport = require("./config/passport");
 const mongoose = require("mongoose");
 const routes = require("./routes/index.js");
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
+const cors = require("cors");
+
+let corsOptions = {
+  origin: "http://localhost:3000"
+}
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,6 +27,9 @@ app.use(
     resave: true,
   })
 );
+
+//setting up cors to interact with front end
+app.use(cors(corsOptions));
 
 // Passport init
 app.use(passport.initialize());
