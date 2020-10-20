@@ -1,22 +1,23 @@
 body {
     font-family: hero-new, sans-serif;
-    font-weight: 400;
+    font-weight: 100;
     font-style: normal;
     color: black;
 }
 
-.nav {
-    padding: 5px;
-}
 
+.nav-logo {
+    width: 30%
+}
 .nav-link {
     color: black;
     background-color: white;
-    padding: 5px;
+    padding: 30px;
+    font-size: 15px;
 }
 
 .nav-link:hover {
-    color: white;
-    background-color: black;
+    color: black ;
+    
 }
 

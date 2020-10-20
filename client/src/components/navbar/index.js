@@ -21,7 +21,7 @@ function nav() {
                 </div>
                 <div className="text-center nav-item">
                     <Link to="/">
-                    <img src="../images/logo.svg" alt="logo" className="login-logo" />
+                    <img src="../images/logo.svg" alt="logo" className="nav-logo" />
                     </Link>
                 </div>
                 <div className="row logins nav-item justify-content-end">

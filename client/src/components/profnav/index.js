@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { Button } from "../button/Button";
 
 function profnav() {
+    // const [button, setButton] = usestate(true)
+
+
+
     return (
+        
+        <div className="col-2">
         <div className="sidenav flex-column">
             <div className="subs">
                 <div className="label">Submissions</div>
@@ -22,16 +29,12 @@ function profnav() {
                 </Link>
                 </ol>
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12">
-                        <button type="button" className="btn btn-dark btn-lg btn-block">
-                            Upload
-                        </button>
-                    </div>
-                </div>
-            </div>
+            
+<Button buttonStyle='btn--primary'>Upload Work</Button>
+
         </div>
+        </div>
+        
     );
 }
 

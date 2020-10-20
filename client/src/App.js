@@ -30,6 +30,7 @@ function App() {
       {/* <Route exact path="/" component={} /> */}
       
       <Footer />
+
     </Router>
   );
 }

@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 
 function home() {
     return (
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-lg-12 hero-top-home">
+            <p>HOMEPAGE</p>
+            </div>
+            </div>
         <div className="container">
             <p>HOMEPAGE buttons</p>
 
@@ -48,6 +54,7 @@ function home() {
                     PROFILE
                 </Link>
             </button>
+        </div>
         </div>
     );
 }

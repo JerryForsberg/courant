@@ -37,23 +37,97 @@ function up() {
                                         <option>R</option>
                                     </select>
 
-                                    <div class="form-group mt-3">
+                                    <div>
+                                        <div>
+                                        <label className="genrepick mt-3">
+                                            Please select the genre that best fits your work
+                                        </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios1" value="option1" />
+                                            <label className="form-check-label" for="exampleRadios1">
+                                                Fiction
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios2" value="option2" />
+                                            <label className="form-check-label" for="exampleRadios2">
+                                                Non-Fiction
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios3" value="option3" />
+                                            <label className="form-check-label" for="exampleRadios3">
+                                                Narrative
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios4" value="option4" />
+                                            <label className="form-check-label" for="exampleRadios4">
+                                                Mystery
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios5" value="option5" />
+                                            <label className="form-check-label" for="exampleRadios5">
+                                                Science Fiction
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios6" value="option6" />
+                                            <label className="form-check-label" for="exampleRadios6">
+                                                Children's Literature
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios7" value="option7" />
+                                            <label className="form-check-label" for="exampleRadios7">
+                                                Horror
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios8" value="option8" />
+                                            <label className="form-check-label" for="exampleRadios8">
+                                                Romance
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios9" value="option9" />
+                                            <label className="form-check-label" for="exampleRadios9">
+                                                Action Adventure
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios10" value="option10" />
+                                            <label className="form-check-label" for="exampleRadios10">
+                                                Fantasy
+                                            </label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios11" value="option11" />
+                                            <label className="form-check-label" for="exampleRadios11">
+                                                Biography
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div className="form-group mt-3">
                                         <label for="exampleFormControlTextarea1">
                                             Please write a brief synopsis
                                             </label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+                                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3">
                                         </textarea>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                                <label class="form-check-label" for="gridCheck1">
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" id="gridCheck1" />
+                                <label className="form-check-label" for="gridCheck1">
                                     By checking this box I am confirming I own the rights to publish this work
                                 </label>
                             </div>
-                            <a href="#" class="btn btn-primary mt-2">PUBLISH</a>
+                            <a href="#" className="btn btn-primary mt-2 mb-2">PUBLISH</a>
                         </form>
                     </div>
                 </div>
