@@ -7,8 +7,6 @@ const storySchema = new Schema({
     textUpload: {type: String, required: true},
     imageUpload: {type: String},
     date: { type: Date, default: Date.now },
-
-
 });
 
 const Story = mongoose.model("Story", storySchema);

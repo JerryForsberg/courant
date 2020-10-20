@@ -5,13 +5,13 @@ import axios from "axios";
 
 function log(props) {
 
-    // useState to grab the email and password from the form
-    const [email, setEmail] = useState();
+    // useState to grab the username and password from the form
+    const [name, setName] = useState();
     const [password, setPassword] = useState();
 
-    // capture email and password target values —————————————————|
-    const userEmailValue = (event) => {
-        setEmail(event.target.value);
+    // capture username and password target values —————————————————|
+    const userNameValue = (event) => {
+        setName(event.target.value);
     };
 
     const userPasswordValue = (event) => {
@@ -19,9 +19,9 @@ function log(props) {
     };
 
     // function to login the user
-    function loginUser(email, password) {
+    function loginUser(name, password) {
         // post data to login route
-        axios.post("/api/login", { email, password })
+        axios.post("/api/login", { name, password })
             .then((data) => {
                 props.setIsLoggedin(true)
                 props.history.push("/gallery")//how to route to the page
@@ -36,13 +36,13 @@ function log(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        let userData = { email, password };
-        if (!userData.email || !userData.password) {
+        let userData = { name, password };
+        if (!userData.name || !userData.password) {
             return;
         }
-        // If there IS an email and password we run the loginUser function and clear the form
-        loginUser(userData.email, userData.password);
-        setEmail("");
+        // If there IS a username and password we run the loginUser function and clear the form
+        loginUser(userData.name, userData.password);
+        setName("");
         setPassword("");
     }
 
@@ -55,17 +55,16 @@ function log(props) {
                             <img src="../images/logo.svg" alt="logo" className="login-logo" />
                         </div>
                         <form>
-                            {/* EMAIL */}
+                            {/* USERNAME */}
                             <div className="form-group">
-                                <label for="exampleInputEmail1" className="login-label">Email address</label>
+                                <label for="exampleInputEmail1" className="login-label">Username</label>
                                 <input
                                     className="form-input form-control login-input"
                                     type="text"
-                                    id="email"
-                                    name="email"
-                                    placeholder="you@email.com"
-                                    value={email}
-                                    onChange={userEmailValue}
+                                    id="name"
+                                    name="name"
+                                    value={name}
+                                    onChange={userNameValue}
                                 />
                             </div>
                             {/* PASSWORD */}

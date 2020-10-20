@@ -1,24 +1,20 @@
-// require all needed dependencies
 const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes/index.js");
 const app = express();
-// setting up port
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3002;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 // Serve up static assets (on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client"));
+  app.use(express.static("client/build"));
 }
-
 // Passport init
-// We need to use sessions to keep track of our user's login status
+// Express Session
 app.use(
   session({
     secret: "secret",
@@ -26,7 +22,8 @@ app.use(
     resave: true,
   })
 );
-// initialize
+
+// Passport init
 app.use(passport.initialize());
 app.use(passport.session());
 // Add routes, both API and view
