@@ -3,7 +3,7 @@ import "./style.css";
 // import API from "../../../utils/API";
 import axios from "axios";
 
-function log(props) {
+function Login(props) {
 
     // useState to grab the username and password from the form
     const [name, setName] = useState();
@@ -107,4 +107,4 @@ function log(props) {
     );
 }
 
-export default log;
+export default Login;
