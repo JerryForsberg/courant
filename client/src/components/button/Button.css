@@ -1,12 +1,9 @@
 :root {
-    --primary: #fff;
-    font-family: hero-new, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: black;
+    --primary: black;
+
 }
 
-.btn {
+.btnn {
     padding: 8px 20px;
     border-radius: 0px;
     outline: none;
@@ -17,6 +14,7 @@
     font-style: normal;
     color: #fff;
     background-color: #070600;
+    
 }
 
 .btn--primary {
@@ -27,9 +25,9 @@
 
 .btn--outline{
     background-color: transparent;
-    color: #ffffff;
+    color: black;
     padding: 8px 20px;
-    border: 1px solid var(--primary);
+    border: 1px solid black;
     transition: all 0.3s ease-out;
 }
 

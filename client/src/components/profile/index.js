@@ -4,7 +4,7 @@ import "./style.css";
 function profile () {
     return (
         <div className="col-8 content-area">
-say cheese
+
         </div>
     );
 }
