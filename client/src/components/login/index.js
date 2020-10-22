@@ -24,7 +24,7 @@ function Login(props) {
         axios.post("/api/login", { name, password })
             .then((data) => {
                 props.setIsLoggedin(true)
-                props.history.push("/gallery")//how to route to the page
+                props.history.push("/profile")//how to route to the page
             })
             // If there's an error, log the error
             .catch(function (err) {
