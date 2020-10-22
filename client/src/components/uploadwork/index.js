@@ -44,7 +44,7 @@ function up() {
                                         </label>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios1" value="option1" />
+                                            <input className="form-check-input" type="radio" className="exampleRadios" id="exampleRadios1" value="option1" checked/>
                                             <label className="form-check-label" for="exampleRadios1">
                                                 Fiction
                                             </label>
