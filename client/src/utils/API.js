@@ -2,24 +2,24 @@
 import axios from "axios";
 
 export default {
-    // USER ROUTES
-    login: (email, password) => {
-      return axios.post("/api/user/login", {
-        email,
-        password,
-      });
-    },
+  // USER ROUTES
+  login: (email, password) => {
+    return axios.post("http://localhost:3001/api/user/login", {
+      email,
+      password,
+    });
+  },
 
-    logout: () => axios.get("/api/user/logout"),
+  logout: () => axios.get("http://localhost:3001/api/user/logout"),
 
-    getUser: function () {
-        return axios.get("/api/user/info");
-    },
+  getUser: function () {
+    return axios.get("http://localhost:3001/api/user/info");
+  },
 
-    signup: (userInfo) => {
-      console.log(userInfo);
-        return axios.post("/api/user/signup", userInfo);
-    }
+  signup: (userInfo) => {
+    // console.log(userInfo);
+    return axios.post("http://localhost:3001/api/user/signup", userInfo);
+  }
 
 
 }
