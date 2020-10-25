@@ -3,7 +3,7 @@ import "./style.css";
 
 function up() {
     return (
-        <div>
+        <form onSubmit={this.handleSubmit}>
             <div className="container uploadtext">
                 Upload your work
                 <div className="row">
@@ -23,8 +23,7 @@ function up() {
                                 <label for="exampleInputPassword1">
                                     Title
                                 </label>
-                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
-
+                                <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
                                 <div className="form-group mt-3">
                                     <label for="exampleFormControlSelect1">
                                         Please rate your work
@@ -132,7 +131,7 @@ function up() {
                     </div>
                 </div>
             </div>
-        </div >
+        </form >
     );
 }
 
