@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const storyController = require("../../controllers/storyController");
-const db = require("../../models");
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 router.use(isAuthenticated);
@@ -20,3 +19,5 @@ router
   .put(storyController.update)
   //delete story
   .delete(storyController.remove);
+
+module.exports = router;
