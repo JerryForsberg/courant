@@ -6,10 +6,10 @@ function profile () {
     return (
         <div className="col-8 content-area">
             <div>
-                {/* map through works from db call props */}
+                {/* map through works from db call props
                 <Link to="/">
                 <img />
-                </Link>
+                </Link> */}
             </div>
         </div>
     );
