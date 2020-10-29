@@ -21,7 +21,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/JerryForsberg/courant",
+  "homepage": "",
   "devDependencies": {
     "concurrently": "^4.1.2",
     "nodemon": "^2.0.4"

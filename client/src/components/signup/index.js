@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 
-function sign() {
+function Signup() {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
@@ -31,7 +31,7 @@ function sign() {
         API.signup(userInfo)
             .then((response) => {
                 if (!response.data.errmsg) {
-                    redirect.push("/gallery");
+                    redirect.push("/profile");
                 }
             })
             .catch((error) => {
@@ -88,4 +88,4 @@ function sign() {
     );
 }
 
-export default sign;
+export default Signup;
