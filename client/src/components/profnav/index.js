@@ -32,9 +32,7 @@ function profnav() {
                 </div>
 
                 {button && <Button buttonStyle="btn--primary">Upload Work</Button>}
-                {button && <Button buttonStyle="btn--primary">joey is cool </Button>}
-                {button && <Button buttonStyle="btn--outline">Outline Work</Button>}
-                
+
 
 
             </div>

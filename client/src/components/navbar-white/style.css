@@ -1,0 +1,32 @@
+body {
+    font-family: hero-new, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    
+}
+
+.nav-logo {
+    width: 130px;
+   
+}
+
+.nav-link {
+    color: white;
+    background-color: transparent;
+    padding: .5rem 1rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    box-shadow: inset 0 0 0 0 white;
+    transition: ease-in-out 0.3s;
+    border: none;
+    outline: none;
+
+}
+
+.nav-link:hover {
+    color: black ;
+    background-color: white;
+   box-shadow: inset 90px 0 0 0 white;
+    font-weight: bold;
+}
+
