@@ -31,7 +31,7 @@ function sign() {
         API.signup(userInfo)
             .then((response) => {
                 if (!response.data.errmsg) {
-                    redirect.push("/gallery");
+                    redirect.push("/profile");
                 }
             })
             .catch((error) => {
