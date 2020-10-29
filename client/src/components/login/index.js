@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import "./style.css";
-// import API from "../../../utils/API";
-import axios from "axios";
+import { useHistory } from "react-router-dom";
+import API from "../../utils/API";
 
-function log(props) {
+function Login() {
 
     // useState to grab the username and password from the form
-    const [name, setName] = useState();
+    const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
+     // Sets up page redirect
+    const history = useHistory();
+
     // capture username and password target values —————————————————|
-    const userNameValue = (event) => {
-        setName(event.target.value);
+    const usernameValue = (event) => {
+        setUsername(event.target.value);
     };
 
     const userPasswordValue = (event) => {
@@ -19,31 +22,36 @@ function log(props) {
     };
 
     // function to login the user
-    function loginUser(name, password) {
-        // post data to login route
-        axios.post("/api/login", { name, password })
-            .then((data) => {
-                props.setIsLoggedin(true)
-                props.history.push("/gallery")//how to route to the page
-            })
-            // If there's an error, log the error
-            .catch(function (err) {
-                console.log(err);
-            });
-    }
+    // function loginUser(name, password) {
+    //     // post data to login route
+    //     axios.post("/api/login", { name, password })
+    //         .then((data) => {
+    //             props.setIsLoggedin(true)
+    //             props.history.push("/profile")//how to route to the page
+    //         })
+    //         // If there's an error, log the error
+    //         .catch(function (err) {
+    //             console.log(err);
+    //         });
+    // }
 
     //  when user hits submit login
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        let userData = { name, password };
-        if (!userData.name || !userData.password) {
-            return;
-        }
-        // If there IS a username and password we run the loginUser function and clear the form
-        loginUser(userData.name, userData.password);
-        setName("");
-        setPassword("");
+        API.login(username, password)
+            .then((response) => {
+            // if successful
+            if (response.status === 200) {
+
+                setUsername(response.data.email);
+
+                history.push("/profile");
+            }
+            })
+            .catch((error) => {
+            console.log(`login error: ${error}`);
+        });
     }
 
     return (
@@ -63,8 +71,8 @@ function log(props) {
                                     type="text"
                                     id="name"
                                     name="name"
-                                    value={name}
-                                    onChange={userNameValue}
+                                    value={username}
+                                    onChange={usernameValue}
                                 />
                             </div>
                             {/* PASSWORD */}
@@ -107,4 +115,4 @@ function log(props) {
     );
 }
 
-export default log;
+export default Login;
