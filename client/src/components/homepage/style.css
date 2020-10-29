@@ -1,3 +1,76 @@
-.hero-top-home {
-    background-color: cornflowerblue;
+* {
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.hero-home {
+background-image: url("./hero-home1.jpg");
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+height: 100vh;
+}
+
+.header-top {
+color: white;
+font-weight: bolder;
+font-size: 60px;
+margin-top: 60px;
+}
+.header-top2{
+color: white;
+font-weight: bolder;
+font-size: 45px;
+}
+.p-top {
+font-family: hero-new-hairline, sans-serif;
+font-weight: 100;
+font-style: normal;
+color: white;  
+font-size: 47px;
+}
+.text-area-top-home {
+    margin-left: 95px;
+}
+
+.share-lady{
+    width: 400px;
+    margin-left: 99px;
+    margin-top: 90px;
+}
+.aspire-dude{
+    width: 660px;
+    
+ 
+}
+.header-mid{
+color: black;
+font-weight: bolder;
+font-size: 50px;
+margin-top: 60px;
+}
+.p-mid{
+    color:#151515;
+}
+.idea-section{
+    background-color: #070600;
+    z-index: -1;
+    height: 300px;
+}
+.p2-mid{
+    color: #fff;
+    font-size: 14px;
+}
+.header2-mid{
+    color: #fff;
+    font-weight: bolder;
+    font-size: 30px;
+    
+}
+.idea-mid {
+    color: #fff;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-top: 60px;
 }
