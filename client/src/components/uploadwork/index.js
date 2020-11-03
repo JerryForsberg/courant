@@ -1,46 +1,47 @@
 // import { event } from "jquery";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 import TextEditor from "../TextEditor";
 
 
 function Up() {
-// const Up = () => {
+    // const Up = () => {
 
-//     const [upload, setUpload] = useState({
-//         author: username,
-//         title: "",
-//         textUpload: "",
-//         imageUpload: "",
-//         rating: "",
-//         genre: "",
-//         confirm: false
-//     });
+    //     const [upload, setUpload] = useState({
+    //         author: username,
+    //         title: "",
+    //         textUpload: "",
+    //         imageUpload: "",
+    //         rating: "",
+    //         genre: "",
+    //         confirm: false
+    //     });
 
-//     const onChange = (e) => {
-//         setUpload({
-//             ...upload, 
-//             [e.target.author]: e.target.value,
-//             [e.target.title]: e.target.value,
-//             [e.target.textUpload]: e.target.value,
-//             [e.target.imageUpload]: e.target.value,
-//             [e.target.rating]: e.target.value,
-//             [e.target.genre]: e.target.value,
-//             [e.target.confirm]: e.target.value,
-//         });
-//     };
+    //     const onChange = (e) => {
+    //         setUpload({
+    //             ...upload, 
+    //             [e.target.author]: e.target.value,
+    //             [e.target.title]: e.target.value,
+    //             [e.target.textUpload]: e.target.value,
+    //             [e.target.imageUpload]: e.target.value,
+    //             [e.target.rating]: e.target.value,
+    //             [e.target.genre]: e.target.value,
+    //             [e.target.confirm]: e.target.value,
+    //         });
+    //     };
 
-//     const onSubmit = e => {
-//         event.preventDefault();
-//         if(value===null){
+    //     const onSubmit = e => {
+    //         event.preventDefault();
+    //         if(value===null){
 
-//         }
-//     }
-    
+    //         }
+    //     }
 
-//     return (
-//         <form>
-//             <div className="container uploadtext">
+
+    return (
+
+        // <form>
+//          <div className="container uploadtext">
 //                 Upload your work
 //                 <div className="row">
 //                     <div className="col">
@@ -168,15 +169,18 @@ function Up() {
 //                         </form>
 //                     </div>
 //                 </div>
-//             </div>
-//         </form >
+//             </div> 
+//          </form >
 //     );
-// }
+// } 
+    <div>
+        <div>
+            <TextEditor />
 
-// export default Up;
-//                 <TextEditor/>
-            
-//             </div>
-//         </div>
-//     );
-// }
+        </div>
+    </div>
+    );
+}
+
+export default Up;
+
