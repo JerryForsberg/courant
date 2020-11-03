@@ -9,8 +9,8 @@ import Account from "./pages/account";
 import Discover from "./pages/discover";
 import Feed from "./pages/feed";
 import Home from "./pages/homepage";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
+import LoginForm from "./pages/login";
+import SignupForm from "./pages/signup";
 import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
 
@@ -22,14 +22,14 @@ function App() {
       <Route exact path="/account" component={Account} />
       <Route exact path="/discover" component={Discover} />
       <Route exact path="/feed" component={Feed} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/login" component={LoginForm} />
+      <Route exact path="/signup" component={SignupForm} />
       <Route exact path="/upload" component={Upload} />
       <Route exact path="/profile" component={Profile} />
       
       {/* <Route exact path="/" component={} /> */}
       
-      <Footer />
+      {/* <Footer /> */}
 
     </Router>
   );

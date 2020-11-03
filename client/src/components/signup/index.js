@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 
-function sign() {
+function Signup() {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
@@ -88,4 +88,4 @@ function sign() {
     );
 }
 
-export default sign;
+export default Signup;
