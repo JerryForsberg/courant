@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import API from "../../utils/API";
 
 function Login() {
@@ -100,9 +100,11 @@ function Login() {
                                 </div>
                             <span className="line mb-5"></span>
                             {/* Create Account */}
+                            <Link to="/signup">
                             <button type="submit" className="btn btn-secondary login-buttons">
                                 Create Account
                             </button>
+                            </Link>
                         </form>
                     </div>
                     {/* <!--right side hero--> */}

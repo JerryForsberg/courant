@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
-import StateManager from "react-select";
 
 function profile() {
     const [state, setState] = useState([]);
@@ -23,15 +22,14 @@ function profile() {
 
     return (
         <div className="col-8 content-area">
-            <div>
-                {/* map through works from db call props */}
+            <button>
                 {state.map((data) => (
-            <Link to={"/api/story/" + data.id}>
-            <img src={data.imageUpload}>
-            </img>
-            </Link>
-            ))}
-            </div>
+                    <img src={data.imageUpload}>
+                        <Link to={"/api/story/" + data.id}>
+                        </Link>
+                    </img>
+                ))}
+            </button>
         </div>
     );
 }
