@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 
@@ -53,7 +53,13 @@ function Signup() {
                         <img src="../images/logo.svg" alt="logo" className="login-logo" />
                     </div>
                     <div className="text-center mt-5 mb-5">
-                        <p>Already have an account? Login </p>
+                        <p>Already have an account? 
+                        <a>
+                        <Link to="/login">
+                        Login 
+                        </Link>
+                    </a>
+                        </p>
                     </div>
                     <button type="submit" className="btn btn-primary login-buttons">Join using Google</button>
                     <form className="">
