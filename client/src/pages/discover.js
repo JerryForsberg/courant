@@ -9,6 +9,7 @@ function discover() {
             <Navbar />
             <Sidenav />
             < Disc />
+            
         </div>
     );
 }

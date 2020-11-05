@@ -4,6 +4,7 @@ import Profnav from "../components/profnav";
 import Navbar from "../components/navbar";
 import api from '../utils/API';
 import axios from 'axios'
+import Footer  from "../footer/index";
 
 function profile(props) {
     // useEffect(() => {
@@ -18,6 +19,7 @@ function profile(props) {
             <Navbar />
             <Profnav />
             <Profile />
+            <Footer />
         </div>
     );
 }
