@@ -1,9 +1,10 @@
 // import { event } from "jquery";
-import React, { Component }  from "react";
+import React, { Component} from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import { Editor } from '@tinymce/tinymce-react';
 import API from "../../utils/API";
+
 
 class Up extends Component {
 
@@ -74,7 +75,7 @@ class Up extends Component {
       </div>
     );
   }
-
+}
 
   // <form>
   //          <div className="container uploadtext">
@@ -219,6 +220,5 @@ class Up extends Component {
   //     </div>
   // </div>
 
-}
 
 export default Up;
