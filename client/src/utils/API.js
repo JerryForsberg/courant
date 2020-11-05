@@ -26,8 +26,8 @@ export default {
   //   return axios.post("/api/story", { author, title, textUpload, imageUpload });
   // },
 
-  addStory: function(storyInfo) {
-    return axios.post("http://localhost:3001/api/story", storyInfo)
+  addStory: function(textUpload) {
+    return axios.post("/api/story", textUpload)
   },
 
   deleteStory: function (id) {

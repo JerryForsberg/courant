@@ -4,8 +4,8 @@ module.exports = {
     // find all stories for that specific user
     findAllStories: function (req, res) {
         db.Story.find({ user: req.user._id})
-            .then((dbStory) => res.json(dbStory))
-            .catch((err) => res.status(422).json(err));
+          .then((dbStory) => res.json(dbStory))
+          .catch((err) => res.status(422).json(err));
     },
 
     // ------ UNSURE IF NEEDED ------- //

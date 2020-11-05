@@ -1,18 +1,11 @@
 
-.uploadtext {
-    font-family: hero-new, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
 .textEditor {
     font-family: sans-serif;
     text-align: center;
     margin: 20px;
 }
 
-  input {
+input {
     background-color: #0c74db;
     border: none;
     color: white;
@@ -22,6 +15,6 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 4px;
-    margin: 0rem 0rem 0rem 0rem;
+    margin: 10px;
   }
   
