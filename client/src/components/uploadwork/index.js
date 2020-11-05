@@ -25,6 +25,7 @@ class Up extends React.Component {
   handleSubmit(event) {
     console.log("Text was submitted: " + this.state.content);
     event.preventDefault();
+    // redirect not working??
     // const redirect = useHistory();
 
     const storyInfo = this.state.content;
