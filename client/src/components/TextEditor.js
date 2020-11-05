@@ -1,93 +1,65 @@
-import React from "react";
+import React, {Component} from "react";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import API from "../utils/API"
 import { useHistory } from "react-router-dom";
 
 
-// function textEditor() {
+class textEditor extends Component {
 
-// // saving data using editor
-//     ClassicEditor
-//         .create( document.querySelector( '#editor' ), console.log("save successful"))
-//         .catch( error => {
-//             console.error( error );
-//         } 
-//     );
+  constructor(props) {
+    super(props);
+    this.state = { content: "" };
 
-//     // getting data 
-//     const submitStory = (event) => {
-//         // cannot read property getData of undefined
-//         let editor;
-//         event.preventDefault();
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-//         const editorData = editor.getData();
+  handleChange(content, editor) {
+    this.setState({ content });
+  }
 
-//         console.log(editorData);
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log("Text was submitted: " + this.state.content);
+  
+    // redirect not working??
+    // const redirect = useHistory();
 
-//     };
+    const storyInfo = this.state.content;
 
-//     // enable or disable a “Save” button and block the user from leaving the page without saving the data.
+    API.addStory(storyInfo)
+      .then((response) => {
+        if (!response.data.errmsg) {
+          console.log(response.data);
+        }
+      })
+      .catch((error) => {
+        console.log(`Post error: ${error}`);
+      });
 
-//     return (
-//         <div>
-//             <form action="[URL]" method="post">
-//             <textarea name="content" id="editor">
-//                 This is some sample content.
-//             </textarea>
-//             <input type="submit" value="Submit" onClick={submitStory} />
-//             </form>
-//         </div>
-//     );
-// }
+  }
 
-
-
-
-function textEditor() {
-
-    const redirect = useHistory();
- 
-    // const submitStory = (event) => {
-    //     event.preventDefault();
-
-    // };
-
-   
+render() {
     return (
         <div className="App">
+            <form onSubmit={this.handleSubmit}>
             <CKEditor
                 editor={ClassicEditor}
                 // save this data:
+                value={this.state.content}
                 data="<p>Hello from CKEditor 5!</p>"
                 onInit={editor => {
                     // You can store the "editor" and use when it is needed.
                     console.log('Editor is ready to use!', editor);
                 }}
-                // onChange saves every single time text changes, which can be 10 times if not copied and pasted
-                onChange={(event, editor) => {
-                    
-                    const storyInfo = editor.getData();
-                     console.log(storyInfo)
-
-                      API.addStory(storyInfo)
-                        .then((response) => {
-                            if (!response.data.errmsg) {
-                                redirect.push("/profile");
-                            }
-                        })
-                        .catch((error) => {
-                            console.log(`login error: ${error}`);
-                        });
-                    
-                }}
-               
-
+                onChange={this.handleChange}
                 />
 
-            <input type="submit" value="Submit" />  
+            <input type="submit" value="Submit" /> 
+            </form> 
         </div>
-    );
+    )};
 }
 
 export default textEditor;

@@ -1,81 +1,83 @@
 // import { event } from "jquery";
-import React, { Component} from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
+import TextEditor from "../TextEditor"
 import { Editor } from '@tinymce/tinymce-react';
 import API from "../../utils/API";
 
 
-class Up extends Component {
+function Up() {
+
 
   // Setting the component's initial state
-  constructor(props) {
-    super(props);
-    this.state = { content: "" };
+//   constructor(props) {
+//     super(props);
+//     this.state = { content: "" };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+//     this.handleChange = this.handleChange.bind(this);
+//     this.handleSubmit = this.handleSubmit.bind(this);
+//   }
 
-  handleChange(content, editor) {
-    this.setState({ content });
-  }
+//   handleChange(content, editor) {
+//     this.setState({ content });
+//   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log("Text was submitted: " + this.state.content);
+//   handleSubmit(event) {
+//     event.preventDefault();
+//     console.log("Text was submitted: " + this.state.content);
   
-    // redirect not working??
-    // const redirect = useHistory();
+//     // redirect not working??
+//     // const redirect = useHistory();
 
-    const storyInfo = this.state.content;
+//     const storyInfo = this.state.content;
 
-    API.addStory(storyInfo)
-      .then((response) => {
-        if (!response.data.errmsg) {
-          console.log(response.data);
-        }
-      })
-      .catch((error) => {
-        console.log(`Post error: ${error}`);
-      });
+//     API.addStory(storyInfo)
+//       .then((response) => {
+//         if (!response.data.errmsg) {
+//           console.log(response.data);
+//         }
+//       })
+//       .catch((error) => {
+//         console.log(`Post error: ${error}`);
+//       });
 
-  }
+//   }
 
 
-  render() {
-    return (
-      <div class="textEditor">
-        <form onSubmit={this.handleSubmit}>
-          <h3>Provide your story below!</h3>
+//   render() {
+//     return (
+//       <div class="textEditor">
+//         <form onSubmit={this.handleSubmit}>
+//           <h3>Provide your story below!</h3>
 
-          <Editor
-            apiKey="gz4gdb5km889y8991tjektzc9div0z0d6l9h98wjbbepbd4c"
-            value={this.state.content}
-            initialValue="<p>Initial content</p>"
-            init={{
-              height: 400,
-              menubar: false,
-              plugins: [
-                'advlist autolink lists link image',
-                'charmap print preview anchor help',
-                'searchreplace visualblocks code',
-                'insertdatetime media table paste wordcount'
-              ],
-              toolbar:
-                'undo redo | formatselect | bold italic | \
-                alignleft aligncenter alignright | \
-                bullist numlist outdent indent | help'
-            }}
-            onEditorChange={this.handleChange}
-          />
+//           <Editor
+//             apiKey="gz4gdb5km889y8991tjektzc9div0z0d6l9h98wjbbepbd4c"
+//             value={this.state.content}
+//             initialValue="<p>Initial content</p>"
+//             init={{
+//               height: 400,
+//               menubar: false,
+//               plugins: [
+//                 'advlist autolink lists link image',
+//                 'charmap print preview anchor help',
+//                 'searchreplace visualblocks code',
+//                 'insertdatetime media table paste wordcount'
+//               ],
+//               toolbar:
+//                 'undo redo | formatselect | bold italic | \
+//                 alignleft aligncenter alignright | \
+//                 bullist numlist outdent indent | help'
+//             }}
+//             onEditorChange={this.handleChange}
+//           />
 
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
-    );
-  }
-}
+//           <input type="submit" value="Submit" />
+//         </form>
+//       </div>
+//     );
+//   }
+// }
 
   // <form>
   //          <div className="container uploadtext">
@@ -211,14 +213,13 @@ class Up extends Component {
   //     );
   // } 
 
-
   //------ THIS CODE WORKS: ----- //
-  // <div>
-  //     <div>
-  //         <TextEditor />
+  return (
+      <div>
+          <TextEditor />
 
-  //     </div>
-  // </div>
-
+      </div>
+  )
+}
 
 export default Up;
