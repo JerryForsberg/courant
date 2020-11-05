@@ -5,3 +5,22 @@
     font-style: normal;
 
 }
+
+.textEditor {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+  input {
+    background-color: #0c74db;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 0rem 0rem 0rem 0rem;
+  }
+  

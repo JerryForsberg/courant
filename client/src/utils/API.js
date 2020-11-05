@@ -22,14 +22,19 @@ export default {
     return axios.post("http://localhost:3001/api/user/signup", userInfo);
   },
 
-  addStory: function (author, title, textUpload, imageUpload) {
-    return axios.post("/api/story", { author, title, textUpload, imageUpload });
+  // addStory: function (author, title, textUpload, imageUpload) {
+  //   return axios.post("/api/story", { author, title, textUpload, imageUpload });
+  // },
+
+  addStory: function(storyInfo) {
+    return axios.post("http://localhost:3001/api/story", storyInfo)
   },
 
   deleteStory: function (id) {
     return axios.delete(`/api/story/${id}`);
   },
 
+  // get all stories by user is
   getAllStories: () => {
     return axios.get("/api/story");
   }

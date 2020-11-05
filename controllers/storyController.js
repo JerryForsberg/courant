@@ -1,6 +1,7 @@
 const db = require("../models");
 
 module.exports = {
+    // find all stories for that specific user
     findAllStories: function (req, res) {
         db.Story.find({ user: req.user._id})
             .then((dbStory) => res.json(dbStory))
@@ -17,10 +18,10 @@ module.exports = {
     create: function (req, res) {
         db.Story.create({
             user: req.user._id,
-            author: req.body.author,
-            title: req.body.title,
+            // author: req.body.author,
+            // title: req.body.title,
             textUpload: req.body.textUpload,
-            imageUpload: req.body.imageUpload
+            // imageUpload: req.body.imageUpload
         })
         .then((dbStory) => {
             db.User.findOneAndUpdate(

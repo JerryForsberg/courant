@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes/index.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const path = require("path");
 
 const cors = require("cors");
 
@@ -27,6 +28,9 @@ app.use(
     resave: true,
   })
 );
+
+ /* New Route to the TinyMCE Node module */
+ app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 //setting up cors to interact with front end
 app.use(cors(corsOptions));
