@@ -3,11 +3,8 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
 
-
-
 function profnav() {
     const [button, setButton] = useState(true);
-
 
     return (
 
@@ -31,10 +28,9 @@ function profnav() {
                     </ol>
                 </div>
 
+                <Link to="/upload">
                 {button && <Button buttonStyle="btn--primary">Upload Work</Button>}
-
-
-
+                </Link>
             </div>
         </div>
 

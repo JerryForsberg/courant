@@ -8,7 +8,7 @@ class textEditor extends Component {
             <div className="App">
               <CKEditor
                     editor={ClassicEditor}
-                    data="<p>Hello from CKEditor 5!</p>"
+                    data="<p>Everybody has a story to tell...</p>"
                     onInit={editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log('Editor is ready to use!', editor);
