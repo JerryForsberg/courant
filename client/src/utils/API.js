@@ -27,7 +27,7 @@ export default {
   // },
 
   addStory: function(textUpload) {
-    return axios.post("/api/story", textUpload)
+    return axios.post("http://localhost:3001/api/story", textUpload)
   },
 
   deleteStory: function (id) {
@@ -36,6 +36,6 @@ export default {
 
   // get all stories by user is
   getAllStories: () => {
-    return axios.get("/api/story");
+    return axios.get("http://localhost:3001/api/story");
   }
 }

@@ -225,6 +225,7 @@ function Up() {
 
   const submitStory = (event) => {
     event.preventDefault();
+    console.log(upload);
 
     // adding upload info from above structure
     API.addStory(upload)
