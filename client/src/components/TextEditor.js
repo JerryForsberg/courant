@@ -31,7 +31,7 @@ class textEditor extends Component {
     API.addStory(storyInfo)
       .then((response) => {
         if (!response.data.errmsg) {
-          console.log(response.data);
+          console.log(response);
         }
       })
       .catch((error) => {
@@ -43,7 +43,7 @@ class textEditor extends Component {
 render() {
     return (
         <div className="App">
-            <form onSubmit={this.handleSubmit}>
+            <form >
             <CKEditor
                 editor={ClassicEditor}
                 // save this data:
@@ -56,7 +56,7 @@ render() {
                 onChange={this.handleChange}
                 />
 
-            <input type="submit" value="Submit" /> 
+            <input type="submit" value="Submit" onClick={this.handleSubmit} /> 
             </form> 
         </div>
     )};

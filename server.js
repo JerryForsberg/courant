@@ -1,11 +1,10 @@
 const express = require("express");
 const session = require("express-session");
-const passport = require("./config/passport");
+const passport = require("passport");
 const mongoose = require("mongoose");
 const routes = require("./routes/index.js");
 const app = express();
-const PORT = process.env.PORT || 3001;
-const path = require("path");
+const PORT = process.env.PORT || 3002;
 
 const cors = require("cors");
 
@@ -30,7 +29,7 @@ app.use(
 );
 
  /* New Route to the TinyMCE Node module */
- app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
+//  app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 //setting up cors to interact with front end
 app.use(cors(corsOptions));
