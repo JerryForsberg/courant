@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import TextEditor from "../TextEditor"
-import { Editor } from '@tinymce/tinymce-react';
 import API from "../../utils/API";
-
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 // Setting the component's initial state
@@ -219,10 +219,12 @@ function Up() {
   const redirect = useHistory();
 
   // Sets input values into State
-  const createStory = (event) => {
+  function createStoryValue(event) {
+    console.log(event.target.value)
     setUpload(event.target.value);
   };
 
+  
   const submitStory = (event) => {
     event.preventDefault();
     console.log(upload);
@@ -243,26 +245,39 @@ function Up() {
   };
 
 
-  //------ THIS CODE WORKS: ----- //
   return (
-    // <div>
-    //     <TextEditor />
-
-    // </div>
 
     <div>
-      <form className="form">
-        <input
-          value={upload}
-          name="textUpload"
-          type="text"
-          onChange={createStory}
-          placeholder="Enter Story Here"
+      <form >
+        <CKEditor
+          editor={ClassicEditor}
+          // save this data:
+          set={upload}
+          data="<p>Hello from CKEditor 5!</p>"
+          onInit={editor => {
+            // You can store the "editor" and use when it is needed.
+            console.log('Editor is ready to use!', editor);
+          }}
+          onChange={createStoryValue}
         />
-        <button onClick={submitStory}>Submit</button>
+
+        <input type="submit" value={upload} onClick={submitStory} />
       </form>
     </div>
 
+// ------ THIS CODE WORKS: ------- //
+    // <div>
+    //   <form className="form">
+    //     <input
+    //       value={upload}
+    //       name="textUpload"
+    //       type="text"
+    //       onChange={createStoryValue}
+    //       placeholder="Enter Story Here"
+    //     />
+    //     <button onClick={submitStory}>Submit</button>
+    //   </form>
+    // </div>
   )
 }
 

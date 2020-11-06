@@ -39,6 +39,8 @@ function profile() {
 
     return (
         <div className="col-8 content-area">
+            {/* ---- NEED A NEW COMPONENT: STORIESCARD TO MAP THROUGH AND PUT ON PROFILE PAGE */}
+            
             {/* <button>
                 {profileStories.map((data) => {
                     return (

@@ -15,18 +15,19 @@ class textEditor extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(content, editor) {
-    this.setState({ content });
+  // CANNOT GET VALUE OF UNDEFINED?
+  handleChange(e){     
+    this.setState({content:e.target.value})
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("Text was submitted: " + this.state.content);
+
+    const storyInfo = JSON.stringify(this.state.content);
+    console.log("Text was submitted: " + storyInfo);
   
     // redirect not working??
     // const redirect = useHistory();
-
-    const storyInfo = this.state.content;
 
     API.addStory(storyInfo)
       .then((response) => {
@@ -54,6 +55,7 @@ render() {
                     console.log('Editor is ready to use!', editor);
                 }}
                 onChange={this.handleChange}
+                
                 />
 
             <input type="submit" value="Submit" onClick={this.handleSubmit} /> 
