@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 
-function dis () {
+function dis() {
     const [state, setState] = useState([]);
 
     const getAllStories = () => {
@@ -22,17 +22,16 @@ function dis () {
 
     return (
         <div>
-        <div className="col-8 content-area">
-            <button>
-                {state.map((data) => (
-                    <img src={data.imageUpload}>
-                        <Link to={"/api/story/" + data.id}>
-                        </Link>
-                    </img>
-                ))}
-            </button>
-        </div>
-
+            <div className="col-8 content-area">
+                <button>
+                    {state.map((data) => (
+                        <img src={data.imageUpload}>
+                            <Link to={"/api/story/" + data.id}>
+                            </Link>
+                        </img>
+                    ))}
+                </button>
+            </div>
         </div>
     );
 }
