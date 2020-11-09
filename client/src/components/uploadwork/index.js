@@ -55,10 +55,6 @@ function Up() {
         //                             </form>
         //                         </div>
         <div>
-            <div className="textedit">
-                <TextEditor></TextEditor>
-            </div>
-
             <form>
                 <div className="col">
                     <div className="form-group mt-5">
@@ -66,6 +62,10 @@ function Up() {
                             Title
                                  </label>
                         <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
+                        <div className="textedit">
+                <TextEditor></TextEditor>
+            </div>
+
                         <div className="form-group mt-3">
                             <label for="exampleFormControlSelect1">
                                 Please rate your work
