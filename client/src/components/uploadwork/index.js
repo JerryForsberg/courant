@@ -5,7 +5,6 @@ import "./style.css";
 import TextEditor from "../TextEditor"
 import API from "../../utils/API";
 import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 // Setting the component's initial state
@@ -213,10 +212,9 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function Up() {
 
+ 
   const [upload, setUpload] = useState("");
 
-  //redirect to vehicle dashboard
-  const redirect = useHistory();
 
   // Sets input values into State
   function createStoryValue(event) {
@@ -233,13 +231,12 @@ function Up() {
     API.addStory(upload)
       .then((response) => {
         // if no error, redirect to profile
-        if (!response.data.errmsg) {
+        if (response.data.isAuthenticated === false) {
           console.log(response.data);
-          // redirect.push("/profile");
         }
       })
       .catch((error) => {
-        console.log(`Post error: ${error}`);
+        console.log(error);
       });
 
   };
@@ -247,37 +244,37 @@ function Up() {
 
   return (
 
-    <div>
-      <form >
-        <CKEditor
-          editor={ClassicEditor}
-          // save this data:
-          set={upload}
-          data="<p>Hello from CKEditor 5!</p>"
-          onInit={editor => {
-            // You can store the "editor" and use when it is needed.
-            console.log('Editor is ready to use!', editor);
-          }}
-          onChange={createStoryValue}
-        />
-
-        <input type="submit" value={upload} onClick={submitStory} />
-      </form>
-    </div>
-
-// ------ THIS CODE WORKS: ------- //
     // <div>
-    //   <form className="form">
-    //     <input
-    //       value={upload}
-    //       name="textUpload"
-    //       type="text"
+    //   <form >
+    //     <CKEditor
+    //       editor={ClassicEditor}
+    //       // save this data:
+    //       set={upload}
+    //       data="<p>Hello from CKEditor 5!</p>"
+    //       onInit={editor => {
+    //         // You can store the "editor" and use when it is needed.
+    //         console.log('Editor is ready to use!', editor);
+    //       }}
     //       onChange={createStoryValue}
-    //       placeholder="Enter Story Here"
     //     />
-    //     <button onClick={submitStory}>Submit</button>
+
+    //     <input type="submit" value={upload} onClick={submitStory} />
     //   </form>
     // </div>
+
+// ------ THIS CODE WORKS: ------- //
+    <div>
+      <form className="form">
+        <input
+          value={upload}
+          name="textUpload"
+          type="text"
+          onChange={createStoryValue}
+          placeholder="Enter Story Here"
+        />
+        <button onClick={submitStory}>Submit</button>
+      </form>
+    </div>
   )
 }
 

@@ -2,7 +2,6 @@ const db = require("../../models");
 const passport = require("../../config/passport");
 const router = require("express").Router();
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
-const axios = require("axios");
 const path = require("path");
 
 // User Routes ----------------------------------------------- ||

@@ -20,21 +20,7 @@ function Login() {
     const userPasswordValue = (event) => {
         setPassword(event.target.value);
     };
-
-    // function to login the user
-    // function loginUser(name, password) {
-    //     // post data to login route
-    //     axios.post("/api/login", { name, password })
-    //         .then((data) => {
-    //             props.setIsLoggedin(true)
-    //             props.history.push("/profile")//how to route to the page
-    //         })
-    //         // If there's an error, log the error
-    //         .catch(function (err) {
-    //             console.log(err);
-    //         });
-    // }
-
+    
     //  when user hits submit login
     const handleSubmit = (event) => {
         event.preventDefault();

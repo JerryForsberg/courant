@@ -14,9 +14,13 @@ import SignupForm from "./pages/signup";
 import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
 
+import { CourantProvider } from "./utils/CourantContext";
+
+
 function App() {
   return (
-    <Router>
+    <>
+<CourantProvider>
 
       <Route exact path="/" component={Home} />
       <Route exact path="/account" component={Account} />
@@ -29,9 +33,9 @@ function App() {
       
       {/* <Route exact path="/" component={} /> */}
       
+      </CourantProvider>
       <Footer />
-
-    </Router>
+    </>
   );
 }
 
