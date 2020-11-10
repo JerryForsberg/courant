@@ -11,13 +11,22 @@ body {
 }
 .nav-link {
     color: black;
-    background-color: white;
-    padding: 30px;
-    font-size: 15px;
+    background-color: transparent;
+    padding: .5rem 1rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-in-out 0.3s;
+    border: none;
+    outline: none;
 }
 
 .nav-link:hover {
-    color: black ;
+    color: white ;
+    background-color: black;
+    box-shadow: inset 90px 0 0 0 black;
+    font-weight: bold;
+    text-decoration: none;
     
 }
 
