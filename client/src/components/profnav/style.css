@@ -1,5 +1,23 @@
-.button-upload {
+/* .button-upload {
     background-color: #070600;
     border-radius: 0px;
     font-size: 15px;
+} */
+
+.info {
+    color: black;
+    background-color: white;
+    padding: 10px;
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+.info:hover {
+    color: white;
+    width: 100%;
+    background-color: black;
+
+}
+.label {
+    padding: 5px;
 }

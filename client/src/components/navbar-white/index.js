@@ -9,12 +9,12 @@ function navWhite() {
             <nav className="nav nav-fill navbar navbar-expand-lg justify-content-center pt-4">
                 <div className="row navLinks nav-item">
                     <a>
-                        <Link className="nav-link" to="/discover">
+                        <Link className="nav-link-white" to="/discover">
                             DISCOVER
                         </Link>
                     </a>
                     <a>
-                        <Link className="nav-link" to="/about">
+                        <Link className="nav-link-white" to="/about">
                             ABOUT
                             </Link>
                     </a>
@@ -26,12 +26,12 @@ function navWhite() {
                 </div>
                 <div className="row logins nav-item justify-content-end">
                     <a>
-                        <Link className="nav-link" to="/login">
+                        <Link className="nav-link-white" to="/login">
                             SIGN IN
                             </Link>
                     </a>
                     <a>
-                        <Link className="nav-link" to="/signup">
+                        <Link className="nav-link-white" to="/signup">
                             SIGN UP
                             </Link>
                     </a>

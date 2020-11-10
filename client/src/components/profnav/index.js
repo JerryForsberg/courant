@@ -13,7 +13,16 @@ function profnav() {
                 <div className="subs">
                     <div className="label">Submissions</div>
                     <ol>
-                        <Link className="info" to="/">
+                        <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>
+                <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>                <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>                <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>                <Link className="nav-link info" to="/">
                             EXAMPLE
                 </Link>
                     </ol>
@@ -22,7 +31,16 @@ function profnav() {
                 <div className="library mt-5">
                     <div className="label">Library</div>
                     <ol>
-                        <Link className="info" to="/">
+                        <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>
+                <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>                  <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>                  <Link className="nav-link info" to="/">
+                            EXAMPLE
+                </Link>                  <Link className="nav-link info" to="/">
                             EXAMPLE
                 </Link>
                     </ol>

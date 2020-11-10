@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 
+
 function profile() {
     // Stores story info from the database
     const [profileStories, setProfileStories] = useState([]);
@@ -38,7 +39,7 @@ function profile() {
     }
 
     return (
-        <div className="col-8 content-area">
+        <div className="col-10 content-area">
             {/* ---- NEED A NEW COMPONENT: STORIESCARD TO MAP THROUGH AND PUT ON PROFILE PAGE */}
             
             {/* <button>
