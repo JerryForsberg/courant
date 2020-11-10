@@ -4,7 +4,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import API from "../utils/API"
 import { useHistory } from "react-router-dom";
 
-
 class textEditor extends Component {
 
   constructor(props) {

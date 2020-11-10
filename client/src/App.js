@@ -11,7 +11,7 @@ import Feed from "./pages/feed";
 import Home from "./pages/homepage";
 import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
-import Upload from "./pages/uploadwork";
+// import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
 
 function App() {
@@ -24,12 +24,12 @@ function App() {
       <Route exact path="/feed" component={Feed} />
       <Route exact path="/login" component={LoginForm} />
       <Route exact path="/signup" component={SignupForm} />
-      <Route exact path="/upload" component={Upload} />
+      {/* <Route exact path="/upload" component={Upload} /> */}
       <Route exact path="/profile" component={Profile} />
       
       {/* <Route exact path="/" component={} /> */}
       
-      <Footer />
+      {/* <Footer /> */}
 
     </Router>
   );

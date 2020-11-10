@@ -24,7 +24,11 @@ function home() {
                     </p>
                     </div>
                     <div>
-                        {button && <Button buttonStyle="btn--outline">DISCOVER</Button>}
+                    <Link to="/discover">
+                        {button && <Button buttonStyle="btn--outline">
+                            DISCOVER
+                            </Button>}
+                            </Link>
                     </div>
                 </div>
             </div>
