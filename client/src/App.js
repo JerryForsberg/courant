@@ -20,19 +20,18 @@ import { CourantProvider } from "./utils/CourantContext";
 function App() {
   return (
     <>
-<CourantProvider>
+      <CourantProvider>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/account" component={Account} />
+        <Route exact path="/discover" component={Discover} />
+        <Route exact path="/feed" component={Feed} />
+        <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/signup" component={SignupForm} />
+        <Route exact path="/upload" component={Upload} />
+        <Route exact path="/profile" component={Profile} />
 
-      <Route exact path="/" component={Home} />
-      <Route exact path="/account" component={Account} />
-      <Route exact path="/discover" component={Discover} />
-      <Route exact path="/feed" component={Feed} />
-      <Route exact path="/login" component={LoginForm} />
-      <Route exact path="/signup" component={SignupForm} />
-      <Route exact path="/upload" component={Upload} />
-      <Route exact path="/profile" component={Profile} />
-      
-      {/* <Route exact path="/" component={} /> */}
-      
+        {/* <Route exact path="/" component={} /> */}
+
       </CourantProvider>
       <Footer />
     </>

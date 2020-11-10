@@ -9,7 +9,7 @@ function Login() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-     // Sets up page redirect
+    // Sets up page redirect
     const history = useHistory();
 
     // capture username and password target values —————————————————|

@@ -221,7 +221,6 @@ function Up() {
     console.log(event.target.value)
     setUpload(event.target.value);
   };
-
   
   const submitStory = (event) => {
     event.preventDefault();
