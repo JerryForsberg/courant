@@ -23,14 +23,14 @@ function dis() {
     return (
         <div>
             <div className="col-8 content-area">
-                <button>
+                {/* <button>
                     {state.map((data) => (
                         <img src={data.imageUpload}>
                             <Link to={"/api/story/" + data.id}>
                             </Link>
                         </img>
                     ))}
-                </button>
+                </button> */}
             </div>
         </div>
     
