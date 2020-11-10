@@ -1,41 +1,58 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 
 
 function profile() {
-    const [state, setState] = useState([]);
+    // Stores story info from the database
+    const [profileStories, setProfileStories] = useState([]);
 
-    const getAllStories = () => {
+    // Sets up page redirect
+    const history = useHistory();
+
+    // API Call for story Info
+    useEffect(() => {
         API.getAllStories()
-            .then(res => {
-                setState(res.data);
-            }).catch(err => {
-                console.log(err);
-            }
-            )
+        .then((res) => {
+            // if (res.data.isAuthenticated === false) {
+            //   return logout(history);
+            // }
+            // if (res.data.length === 0) {
+            //   history.push("/add-vehicle");
+            // }
+            setProfileStories(res.data);
+          })
+          .catch((err) => console.log(err));
+      }, []);
+
+
+    const getLatestStories = () => {
+        API.getAllStories()
+        .then((res) => {
+            // if (res.data.isAuthenticated === false) {
+            //   return logout(history);
+            // }
+            setProfileStories(res.data);
+          })
+          .catch((err) => console.log(err));
     }
 
-    useEffect(() => {
-        getAllStories();
-    }, []);
-
     return (
-        <div className="col-10 content-area">
-            <button>
-                {state.map((data) => (
+        <div className="col-8 content-area">
+            {/* ---- NEED A NEW COMPONENT: STORIESCARD TO MAP THROUGH AND PUT ON PROFILE PAGE */}
+            
+            {/* <button>
+                {profileStories.map((data) => {
+                    return (
                     <img src={data.imageUpload}>
                         <Link to={"/api/story/" + data.id}>
                         </Link>
                     </img>
-                ))}
-            </button>
-
-      
-
+                    )
+                })}
+            </button> */}
         </div>
-
     );
 }
 

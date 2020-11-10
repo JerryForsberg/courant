@@ -28,6 +28,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^23.0.0",
     "@ckeditor/ckeditor5-react": "^2.1.0",
+    "@tinymce/tinymce-react": "^3.8.1",
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.2",

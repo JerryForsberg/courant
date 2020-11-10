@@ -8,7 +8,7 @@ function nav() {
         <div className="nav col-2 flex-column sidee-nav">
             <div className="genre">
                 <div className="label">Genre</div>
-                <a>
+                <button>
                     <Link className="nav-link info" to="/">
                         EXAMPLE
                     </Link>
@@ -21,9 +21,9 @@ function nav() {
                     <Link className="nav-link info" to="/">
                         EXAMPLE
                     </Link>
-                </a>
+                </button>
              <div className="label mt-5">Popular</div>
-                <a>
+                <button>
                     <Link className="nav-link info" to="/">
                     EXAMPLE
                     </Link>
@@ -39,7 +39,7 @@ function nav() {
                     <Link className="nav-link info" to="/">
                     EXAMPLE
                     </Link>
-                </a>
+                </button>
             </div>
         </div>
     );
