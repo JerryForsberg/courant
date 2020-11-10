@@ -4,6 +4,7 @@ import "./style.css";
 import API from "../../utils/API";
 import { useCourantContext } from "../../utils/CourantContext"
 
+
 function profile() {
     const { logout } = useCourantContext();
 
@@ -28,8 +29,8 @@ function profile() {
 
 
     return (
-        <div className="col-8 content-area">
-            {/* ---- NEED A NEW COMPONENT: IMAGE TO MAP THROUGH AND PUT ON PROFILE PAGE */}
+        <div className="col-10 content-area">
+            {/* ---- NEED A NEW COMPONENT: STORIESCARD TO MAP THROUGH AND PUT ON PROFILE PAGE */}
             
             {/* <button>
                 {profileStories.map((data) => {

@@ -9,8 +9,10 @@ body {
     width: 130px;
    
 }
-
-.nav-link {
+a {
+    text-decoration: none;
+}
+.nav-link-white {
     color: white;
     background-color: transparent;
     padding: .5rem 1rem;
@@ -20,13 +22,16 @@ body {
     transition: ease-in-out 0.3s;
     border: none;
     outline: none;
+  
+    
 
 }
 
-.nav-link:hover {
+.nav-link-white:hover {
     color: black ;
     background-color: white;
-   box-shadow: inset 90px 0 0 0 white;
+    box-shadow: inset 90px 0 0 0 white;
     font-weight: bold;
+    text-decoration: none;
 }
 

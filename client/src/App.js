@@ -11,7 +11,7 @@ import Feed from "./pages/feed";
 import Home from "./pages/homepage";
 import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
-import Upload from "./pages/uploadwork";
+// import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
 
 import { CourantProvider } from "./utils/CourantContext";
