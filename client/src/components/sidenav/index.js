@@ -10,16 +10,16 @@ function nav() {
                 <div className="label">Genre</div>
               
                     <Link className="nav-link info" to="/">
-                        EXAMPLE
+                        Romance
                     </Link>
                     <Link className="nav-link info" to="/">
-                        EXAMPLE
+                        Science Fiction
                     </Link>
                     <Link className="nav-link info" to="/">
-                        EXAMPLE
+                        Horror
                     </Link>
                     <Link className="nav-link info" to="/">
-                        EXAMPLE
+                        Poetry
                     </Link>
                
              <div className="label mt-5">Popular</div>
