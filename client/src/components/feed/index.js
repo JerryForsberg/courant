@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function feed () {
+function Feed () {
     return (
         <div>
             
@@ -9,4 +9,4 @@ function feed () {
     );
 }
 
-export default feed;
+export default Feed;

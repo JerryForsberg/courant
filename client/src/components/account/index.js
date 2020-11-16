@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function acct () {
+function Account () {
     return (
         <div>
 
@@ -9,4 +9,4 @@ function acct () {
     );
 }
 
-export default acct ;
+export default Account ;

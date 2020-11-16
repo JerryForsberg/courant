@@ -7,6 +7,8 @@ import API from "../../utils/API";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 
+// import { useCourantContext } from "../../utils/CourantContext"
+
 // Setting the component's initial state
 //   constructor(props) {
 //     super(props);
@@ -79,7 +81,13 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 
 function Up() {
 
+  // const { logout } = useCourantContext();
+
   const [upload, setUpload] = useState("");
+
+  //redirect to vehicle dashboard
+  const redirect = useHistory();
+
   const [storyError, setStoryError] = useState(false);
 
   // Sets input values into State
@@ -90,14 +98,21 @@ function Up() {
   
   const submitStory = (event) => {
     event.preventDefault();
+    // if nothing in upload, return error state
+    if (!upload) {
+      return setStoryError(true);
+    }
 
-    // adding upload info from above structure
+    // adding upload/story info 
     API.addStory(upload)
-      .then(() => {
+      .then((res) => {
         // if no error, redirect to profile
-        
-          console.log(upload)
-
+        if (res.data.isAuthenticated === true) {
+          redirect.push("/profile");
+          console.log(upload);
+        } else {
+          return;
+        }
       })
       .catch((error) => {
         console.log(`error: ${error}`);

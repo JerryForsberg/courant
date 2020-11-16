@@ -4,17 +4,20 @@ import axios from "axios";
 export default {
   // USER ROUTES
   login: (username, password) => {
-    // had to add entire url, will it work on deployed version?
-    return axios.post("http://localhost:3001/api/user/login", {
+    return axios.post("/api/user/login", {
       username,
-      password
+      password,
     });
   },
 
   logout: () => axios.get("http://localhost:3001/api/user/logout"),
 
+  homeLoginCheck: () => {
+    return axios.get("api/user/isAuthenticated");
+  },
+
   getUser: function () {
-    return axios.get("http://localhost:3001/api/user/info");
+    return axios.get("/api/user/info");
   },
 
   signup: (userInfo) => {
@@ -35,7 +38,7 @@ export default {
   },
 
   // get all stories by user is
-  getAllStories: () => {
+  findAllStories: () => {
     return axios.get("http://localhost:3001/api/story");
   }
 }

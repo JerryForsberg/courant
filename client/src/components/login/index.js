@@ -8,7 +8,7 @@ function Login() {
     // useState to grab the username and password from the form
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
-    const [loginFail, setLoginFail] = useState(false);
+    // const [loginFail, setLoginFail] = useState(false);
 
     // Sets up page redirect
     const history = useHistory();
@@ -21,25 +21,27 @@ function Login() {
     const userPasswordValue = (event) => {
         setPassword(event.target.value);
     };
-    
+
     //  when user hits submit login
     const handleSubmit = (event) => {
         event.preventDefault();
 
         API.login(username, password)
             .then((response) => {
-            // if successful
-            if (response.status === 200) {
-                console.log(response.data)
-                setUsername(response.data.email);
+                // if successful
+                if (response.status === 200) {
 
-                history.push("/profile");
-            }
+                    console.log(response.data)
+                    
+                    setUsername(response.data.email);
+
+                    history.push("/profile");
+                }
             })
             .catch((error) => {
-              setLoginFail(true)
-              console.log(`login error: ${error}`);
-        });
+                // setLoginFail(true)
+                console.log(`login error: ${error}`);
+            });
     }
 
     return (
@@ -50,6 +52,12 @@ function Login() {
                         <div className="mt-5 text-center mb-5">
                             <img src="../images/logo.svg" alt="logo" className="login-logo" />
                         </div>
+
+                        {/* {loginFail ? (
+                            <p className="text-center text-danger">
+                                Oops, login did not work. Please check you used the correct info and have an account set up already.</p>
+                        ) : null} */}
+
                         <form>
                             {/* USERNAME */}
                             <div className="form-group">
@@ -83,14 +91,14 @@ function Login() {
                                 Sign in
                             </button>
                             {/* Forgot Password */}
-                                <div className="text-center mt-5 mb-3">
-                                    Forgot Password ?
+                            <div className="text-center mt-5 mb-3">
+                                Forgot Password ?
                                 </div>
                             <span className="line mb-5"></span>
                             {/* Create Account */}
                             <Link to="/signup">
-                            <button type="submit" className="btn btn-secondary login-buttons">
-                                Create Account
+                                <button type="submit" className="btn btn-secondary login-buttons">
+                                    Create Account
                             </button>
                             </Link>
                         </form>
