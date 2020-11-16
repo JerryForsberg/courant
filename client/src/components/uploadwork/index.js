@@ -5,6 +5,7 @@ import "./style.css";
 import TextEditor from "../TextEditor"
 import API from "../../utils/API";
 import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 
 // Setting the component's initial state
 //   constructor(props) {
@@ -78,100 +79,77 @@ import CKEditor from '@ckeditor/ckeditor5-react';
 
 function Up() {
 
- 
   const [upload, setUpload] = useState("");
-
+  const [storyError, setStoryError] = useState(false);
 
   // Sets input values into State
-  function createStoryValue(event) {
-    console.log(event.target.value)
-    setUpload(event.target.value);
+  const createStoryValue = (res) => {
+    console.log(res.currentTarget.value)
+    setUpload(res.currentTarget.value);
   };
+  
   const submitStory = (event) => {
     event.preventDefault();
-    console.log(upload);
 
     // adding upload info from above structure
     API.addStory(upload)
-      .then((response) => {
+      .then(() => {
         // if no error, redirect to profile
-        if (response.data.isAuthenticated === false) {
-          console.log(response.data);
-        }
+        
+          console.log(upload)
+
       })
       .catch((error) => {
-        console.log(error);
+        console.log(`error: ${error}`);
       });
   };
 
   return (
+    // <div>
+    //   <form>
+    //     <div className="col">
+    //       <div className="form-group mt-5">
+    //         <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
+    //         <div className="textedit">
+    //           <CKEditor
+    //             editor={ClassicEditor}
+    //             // save this data:
+    //             value={upload}
+    //             data="<p>Tell your story...</p>"
+    //             onInit={editor => {
+    //               // You can store the "editor" and use when it is needed.
+    //               console.log('Editor is ready to use!', editor);
+    //             }}
+    //             onChange={createStoryValue}
+    //           />
+    //         </div>
+    //       </div>
+    //       <div className="form-check">
+    //         <input className="form-check-input" type="checkbox" id="gridCheck1" />
+    //         <label className="form-check-label" for="gridCheck1">
+    //           By checking this box I am confirming I own the rights to publish this work
+    //         </label>
+    //       </div>
+    //       <button type="submit" value={upload} onClick={submitStory} className="btn btn-primary mt-2 mb-2">PUBLISH</button>
+    //     </div>
+    //   </form>
+    // </div>
+//   )
+// }
+
+// ------ THIS CODE WORKS: ------- //
     <div>
-      <form>
-        <div className="col">
-          <div className="form-group mt-5">
-            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
-            <div className="textedit">
-              <CKEditor
-                editor={ClassicEditor}
-                // save this data:
-                set={upload}
-                data="<p>Tell your story...</p>"
-                onInit={editor => {
-                  // You can store the "editor" and use when it is needed.
-                  console.log('Editor is ready to use!', editor);
-                }}
-                onChange={createStoryValue}
-              />
-            </div>
-          </div>
-          <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck1" />
-            <label className="form-check-label" for="gridCheck1">
-              By checking this box I am confirming I own the rights to publish this work
-            </label>
-          </div>
-          <button href="#" type="submit" value={upload} onClick={submitStory} className="btn btn-primary mt-2 mb-2">PUBLISH</button>
-        </div>
+      <form className="form">
+        <input
+          value={upload}
+          type="text"
+          onChange={createStoryValue}
+          placeholder="Enter Story Here"
+        />
+        <button onClick={submitStory}>Submit</button>
       </form>
     </div>
   )
 }
-
-export default Up;
-
-
-    // <div>
-    //   <form >
-    //     <CKEditor
-    //       editor={ClassicEditor}
-    //       // save this data:
-    //       set={upload}
-    //       data="<p>Hello from CKEditor 5!</p>"
-    //       onInit={editor => {
-    //         // You can store the "editor" and use when it is needed.
-    //         console.log('Editor is ready to use!', editor);
-    //       }}
-    //       onChange={createStoryValue}
-    //     />
-
-    //     <input type="submit" value={upload} onClick={submitStory} />
-    //   </form>
-    // </div>
-
-// ------ THIS CODE WORKS: ------- //
-//     <div>
-//       <form className="form">
-//         <input
-//           value={upload}
-//           name="textUpload"
-//           type="text"
-//           onChange={createStoryValue}
-//           placeholder="Enter Story Here"
-//         />
-//         <button onClick={submitStory}>Submit</button>
-//       </form>
-//     </div>
-//   )
-// }
 
 export default Up;

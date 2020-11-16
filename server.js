@@ -18,22 +18,22 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
 // Passport init
 // Express Session
+app.set('trust proxy', 1)
 app.use(
   session({
     secret: "secret",
     saveUninitialized: true,
     resave: true,
-    cookie: {
-      secure: false,
-      maxAge: 3600000 //1 hour
-  }
+    cookie: { secure: false },
+    // store: new MongoStore({
+    //   url: config.urlMongo,
+    //   collection: 'sessions'
+    // })
   })
 );
-
- /* New Route to the TinyMCE Node module */
-//  app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 //setting up cors to interact with front end
 app.use(cors(corsOptions));
@@ -41,6 +41,7 @@ app.use(cors(corsOptions));
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
+
 // Add routes, both API and view
 app.use(routes);
 

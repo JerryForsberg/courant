@@ -45,7 +45,7 @@ router.get("/isAuthenticated", function (req, res) {
 
 // Endpoint to get current user
 router.get("/info", isAuthenticated, function (req, res) {
-    db.User.findOne({ _id: req.user._id })
+    db.User.findById(req.user._id)
       .populate({
         path: "users",
         model: "User",

@@ -8,6 +8,7 @@ function Login() {
     // useState to grab the username and password from the form
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    const [loginFail, setLoginFail] = useState(false);
 
     // Sets up page redirect
     const history = useHistory();
@@ -29,14 +30,15 @@ function Login() {
             .then((response) => {
             // if successful
             if (response.status === 200) {
-
+                console.log(response.data)
                 setUsername(response.data.email);
 
                 history.push("/profile");
             }
             })
             .catch((error) => {
-            console.log(`login error: ${error}`);
+              setLoginFail(true)
+              console.log(`login error: ${error}`);
         });
     }
 

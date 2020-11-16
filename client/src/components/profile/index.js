@@ -11,8 +11,8 @@ function profile() {
     // Stores story info from the database
     const [profileStories, setProfileStories] = useState([]);
 
-  // Sets up page redirect
-  const history = useHistory();
+    // Sets up page redirect
+    const history = useHistory();
    
     // API Call for retrieving story Info
     useEffect(() => {
