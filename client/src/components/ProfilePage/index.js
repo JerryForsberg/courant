@@ -27,50 +27,16 @@ function ProfilePage() {
         })
         .catch((err) => console.log(err));
 
-      // no story info so far, this part doesn't work yet:
-        API.findAllStories()
-        .then((res) => {
-          if (res.data.isAuthenticated === false) {
-            return logout(history);
-          }
-          if (res.data.length === 0) {
-            history.push("/profile");
-          }
-          setStoryInfo(res.data);
-        })
-          .catch((err) => console.log(err));
+     
       }, []);
  
-      const getLatestStories = () => {
-        API.findAllStories()
-        .then((res) => {
-          if (res.data.isAuthenticated === false) {
-            return logout(history);
-          }
-          if (res.data.length === 0) {
-            history.push("/profile");
-          }
-          setStoryInfo(res.data);
-        })
-          .catch((err) => console.log(err));
-      }
+      
 
 
     return (
         <div className="col-10 content-area">
             {/* ---- NEED A NEW COMPONENT: STORIESCARD TO MAP THROUGH AND PUT ON PROFILE PAGE */}
-    
-            {storyInfo.map((story) => {
-              return (
-                <StorySection
-                  key={story._id}
-                  storyID={story._id}
-                  author={story.author}
-                  title={story.title}
-                  getLatestStories={getLatestStories}
-                />
-              );
-            })}
+            <StorySection />
         </div>
     );
 }

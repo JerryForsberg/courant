@@ -9,11 +9,11 @@ module.exports = {
     },
 
     // ------ UNSURE IF NEEDED ------- //
-    // findById: function (req, res) {
-    //     db.Story.find({ _id: req.params.id })
-    //       .then((dbStory) => res.json(dbStory))
-    //       .catch((err) => res.status(422).json(err));
-    //   },
+    findById: function (req, res) {
+        db.Story.find({ _id: req.params.id })
+          .then((dbStory) => res.json(dbStory))
+          .catch((err) => res.status(422).json(err));
+      },
 
     create: function (req, res) {
         db.Story.create({

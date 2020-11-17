@@ -14,7 +14,7 @@ router
 router
   .route("/:id")
   // gets single story by id
-//   .get(storyController.findById)
+  .get(storyController.findById)
   // update story
   .put(storyController.update)
   //delete story

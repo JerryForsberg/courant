@@ -1,24 +1,42 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import API from "../../utils/API";
 import "./style.css";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import {useCourantContext} from "../../utils/CourantContext";
 
 function StoriesCard(props) {
     const {logout } = useCourantContext();
+    const [story, setStory] = useState({})
+    const {id} = useParams();
 
-    // Sets up page redirect
-    const history = useHistory();
+    useEffect(() => {
+      API.getBook(id)
+        .then(res => setBook(res.data))
+        .catch(err => console.log(err));
+    }, [])
+
+    const getLatestStories = () => {
+        API.findAllStories()
+        .then((res) => {
+          if (res.data.isAuthenticated === false) {
+            return logout(history);
+          }
+          if (res.data.length === 0) {
+            history.push("/profile");
+          }
+          setStoryInfo(res.data);
+        })
+          .catch((err) => console.log(err));
+      }
+
+
 
     // option to delete story
     const submitDeleteStory = () => {
         API.deleteStory(props.storyID)
         .then((response) => {
-            if (response.data.isAuthenticated === false) {
-                return logout(history);
-              }
-
-            props.getLatestStories()  
+            props.getLatestStories();
         })
         .catch((error) => {
             console.log(error);
@@ -41,27 +59,38 @@ function StoriesCard(props) {
 
 // Stories Card ==================================== |
 // This is where the stories wil display
-function StorySection({ storyID, getLatestStories, author, title }) {
-    const { logout } = useCourantContext();
+function StorySection() {
+    const [stories, setStories] = useState({});
 
-    //redirect to vehicle dashboard
-    const history = useHistory();
+    // Loads all stories and sets them to stories
+    useEffect(() => {
+        API.findAllStories()
+        .then(res => 
+            setStories(res.data)
+        )
+            .catch(err => console.log(err)); 
+    }, []);
 
 
     return (
         <div>
             {/* populated stories will go in here */}
 
-              <div >
-                <h4 >{title}</h4>
-                <h3>{author}</h3>
-              </div>
-            
-              <StoriesCard
-                getLatestStories={getLatestStories}
-                storyID={storyID}
-                title={title}
-            />
+            {stories.length ? (
+                <li>
+                {stories.map(story => (
+                  <ul key={story._id}>
+                    <Link to={"/story/" + story._id}>
+                      <strong>
+                        {story.title} by {story.author}
+                      </strong>
+                    </Link>
+                  </ul>
+                ))}
+              </li>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
         </div>
     )
 }
