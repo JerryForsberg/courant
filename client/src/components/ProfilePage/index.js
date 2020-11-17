@@ -28,17 +28,17 @@ function ProfilePage() {
         .catch((err) => console.log(err));
 
 // no story info so far
-        // API.findAllStories()
-        // .then((res) => {
-        //   if (res.data.isAuthenticated === false) {
-        //     return logout(history);
-        //   }
-        //   if (res.data.length === 0) {
-        //     history.push("/profile");
-        //   }
-        //   setStoryInfo(res.data);
-        // })
-        //   .catch((err) => console.log(err));
+        API.findAllStories()
+        .then((res) => {
+          if (res.data.isAuthenticated === false) {
+            return logout(history);
+          }
+          if (res.data.length === 0) {
+            history.push("/profile");
+          }
+          setStoryInfo(res.data);
+        })
+          .catch((err) => console.log(err));
       }, []);
  
       const getLatestStories = () => {

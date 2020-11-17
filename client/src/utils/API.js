@@ -21,12 +21,8 @@ export default {
     return axios.post("http://localhost:3001/api/user/signup", userInfo);
   },
 
-  // addStory: function (author, title, textUpload, imageUpload) {
-  //   return axios.post("/api/story", { author, title, textUpload, imageUpload });
-  // },
-
-  addStory: function(textUpload) {
-    return axios.post("http://localhost:3001/api/story", textUpload)
+  addStory: function (author, title, textUpload) {
+    return axios.post("/api/story", { author, title, textUpload });
   },
 
   deleteStory: function (id) {

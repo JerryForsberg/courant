@@ -9,7 +9,7 @@ function StoriesCard(props) {
 
     // Sets up page redirect
     const history = useHistory();
-    
+
     // option to delete story
     const submitDeleteStory = () => {
         API.deleteStory(props.storyID)
