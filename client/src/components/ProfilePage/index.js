@@ -27,7 +27,7 @@ function ProfilePage() {
         })
         .catch((err) => console.log(err));
 
-// no story info so far
+      // no story info so far, this part doesn't work yet:
         API.findAllStories()
         .then((res) => {
           if (res.data.isAuthenticated === false) {
