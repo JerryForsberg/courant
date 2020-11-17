@@ -8,10 +8,9 @@ import StoriesCard from "../StoriesPopulated"
 // Stories Card ==================================== |
 function StorySection({ getInfo, storyInfo, story }) {
 
-
     return (
         <div>
-            {/* populated stories will go in here */}
+        {/* populated stories will go in here */}
 
         <StoriesPopulated
             story={story}

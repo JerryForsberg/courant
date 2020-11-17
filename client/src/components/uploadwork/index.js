@@ -1,5 +1,5 @@
 // import { event } from "jquery";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import TextEditor from "../TextEditor"
@@ -79,7 +79,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 // }
 
 
-function Up() {
+function UploadWork() {
 
   // const { logout } = useCourantContext();
 
@@ -120,51 +120,51 @@ function Up() {
   };
 
   return (
-    // <div>
-    //   <form>
-    //     <div className="col">
-    //       <div className="form-group mt-5">
-    //         <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
-    //         <div className="textedit">
-    //           <CKEditor
-    //             editor={ClassicEditor}
-    //             // save this data:
-    //             value={upload}
-    //             data="<p>Tell your story...</p>"
-    //             onInit={editor => {
-    //               // You can store the "editor" and use when it is needed.
-    //               console.log('Editor is ready to use!', editor);
-    //             }}
-    //             onChange={createStoryValue}
-    //           />
-    //         </div>
-    //       </div>
-    //       <div className="form-check">
-    //         <input className="form-check-input" type="checkbox" id="gridCheck1" />
-    //         <label className="form-check-label" for="gridCheck1">
-    //           By checking this box I am confirming I own the rights to publish this work
-    //         </label>
-    //       </div>
-    //       <button type="submit" value={upload} onClick={submitStory} className="btn btn-primary mt-2 mb-2">PUBLISH</button>
-    //     </div>
-    //   </form>
-    // </div>
-//   )
-// }
-
-// ------ THIS CODE WORKS: ------- //
     <div>
-      <form className="form">
-        <input
-          value={upload}
-          type="text"
-          onChange={createStoryValue}
-          placeholder="Enter Story Here"
-        />
-        <button onClick={submitStory}>Submit</button>
+      <form>
+        <div className="col">
+          <div className="form-group mt-5">
+            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
+            <div className="textedit">
+              <CKEditor
+                editor={ClassicEditor}
+                // save this data:
+                value={upload}
+                data="<p>Tell your story...</p>"
+                onInit={editor => {
+                  // You can store the "editor" and use when it is needed.
+                  console.log('Editor is ready to use!', editor);
+                }}
+                onChange={createStoryValue}
+              />
+            </div>
+          </div>
+          <div className="form-check">
+            <input className="form-check-input" type="checkbox" id="gridCheck1" />
+            <label className="form-check-label" for="gridCheck1">
+              By checking this box I am confirming I own the rights to publish this work
+            </label>
+          </div>
+          <button type="submit" value={upload} onClick={submitStory} className="btn btn-primary mt-2 mb-2">PUBLISH</button>
+        </div>
       </form>
     </div>
   )
 }
 
-export default Up;
+// ------ THIS CODE WORKS: ------- //
+    // <div>
+    //   <form className="form">
+    //     <input
+    //       value={upload}
+    //       type="text"
+    //       onChange={createStoryValue}
+    //       placeholder="Enter Story Here"
+    //     />
+    //     <button onClick={submitStory}>Submit</button>
+    //   </form>
+    // </div>
+//   )
+// }
+
+export default UploadWork;

@@ -3,6 +3,7 @@ import "./style.css";
 import Sidenav from "../sidenav";
 import Navbar from "../navbar";
 import Footer from "../footer"
+import Disc from "../discover"
 
 function Discover() {
 
@@ -18,11 +19,8 @@ function Discover() {
                     ))}
                 </button> */}
 
-            <Navbar />
-            <Sidenav />
             {/* </div> */}
-            <Footer />
-
+        
             </div>
         
     );

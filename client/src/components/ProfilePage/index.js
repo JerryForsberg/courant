@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 import { useCourantContext } from "../../utils/CourantContext"
-import StorySection from "../StorySection"
+import StorySection from "../StorySection";
 
 // This is our main page
 function ProfilePage() {
@@ -45,17 +45,6 @@ function ProfilePage() {
               getInfo={getInfo}
               storyInfo={storyInfo}
             />
-
-            {/* <button>
-                {profileStories.map((data) => {
-                    return (
-                    <img src={data.imageUpload}>
-                        <Link to={"/api/story/" + data.id}>
-                        </Link>
-                    </img>
-                    )
-                })}
-            </button> */}
         </div>
     );
 }
