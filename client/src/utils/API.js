@@ -12,10 +12,6 @@ export default {
 
   logout: () => axios.get("http://localhost:3001/api/user/logout"),
 
-  homeLoginCheck: () => {
-    return axios.get("api/user/isAuthenticated");
-  },
-
   getUser: function () {
     return axios.get("/api/user/info");
   },

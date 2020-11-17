@@ -1,50 +1,76 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 import { useCourantContext } from "../../utils/CourantContext"
 import StorySection from "../StorySection";
 
-// This is our main page
+// This is our main page that wraps around everything
 function ProfilePage() {
     const {logout } = useCourantContext();
 
     const history = useHistory();
+    const { id } = useParams();
+
 
     const [storyInfo, setStoryInfo] = useState([])
-    
-    async function getInfo() {
-        try {
-          const fetchUser = await API.getUser();
-          const fetchStories = await API.getAllStories();
 
-          if (
-            fetchUser.data.isAuthenticated === false ||
-            fetchStories.data.isAuthenticated === false
-          ) {
+    // useEffect hook to display on page after render
+    useEffect(() => {
+
+      API.getUser(id)
+        .then((res) => {
+          if (res.data.isAuthenticated === false) {
             return logout(history);
           }
+          console.log("Get User successful")
+        })
+        .catch((err) => console.log(err));
 
-          setStoryInfo(fetchStories.data)
-
-        }
-        catch (error) {
-            console.log(error);
+// no story info so far
+        // API.findAllStories()
+        // .then((res) => {
+        //   if (res.data.isAuthenticated === false) {
+        //     return logout(history);
+        //   }
+        //   if (res.data.length === 0) {
+        //     history.push("/profile");
+        //   }
+        //   setStoryInfo(res.data);
+        // })
+        //   .catch((err) => console.log(err));
+      }, []);
+ 
+      const getLatestStories = () => {
+        API.findAllStories()
+        .then((res) => {
+          if (res.data.isAuthenticated === false) {
+            return logout(history);
           }
-    }
+          if (res.data.length === 0) {
+            history.push("/profile");
+          }
+          setStoryInfo(res.data);
+        })
+          .catch((err) => console.log(err));
+      }
 
-    useEffect(() => { 
-        getInfo(); 
-    }, []);
 
     return (
         <div className="col-10 content-area">
             {/* ---- NEED A NEW COMPONENT: STORIESCARD TO MAP THROUGH AND PUT ON PROFILE PAGE */}
-            
-            <StorySection 
-              getInfo={getInfo}
-              storyInfo={storyInfo}
-            />
+    
+            {storyInfo.map((story) => {
+              return (
+                <StorySection
+                  key={story._id}
+                  storyID={story._id}
+                  author={story.author}
+                  title={story.title}
+                  getLatestStories={getLatestStories}
+                />
+              );
+            })}
         </div>
     );
 }
