@@ -9,17 +9,17 @@ module.exports = {
     },
 
     // ------ UNSURE IF NEEDED ------- //
-    // findById: function (req, res) {
-    //     db.Story.find({ _id: req.params.id })
-    //       .then((dbStory) => res.json(dbStory))
-    //       .catch((err) => res.status(422).json(err));
-    //   },
+    findById: function (req, res) {
+        db.Story.find({ _id: req.params.id })
+          .then((dbStory) => res.json(dbStory))
+          .catch((err) => res.status(422).json(err));
+      },
 
     create: function (req, res) {
         db.Story.create({
             user: req.user._id,
-            // author: req.body.author,
-            // title: req.body.title,
+            author: req.body.author,
+            title: req.body.title,
             textUpload: req.body.textUpload,
             // imageUpload: req.body.imageUpload
         })

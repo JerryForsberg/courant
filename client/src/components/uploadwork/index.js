@@ -1,11 +1,11 @@
-// import { event } from "jquery";
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./style.css";
-import TextEditor from "../TextEditor"
 import API from "../../utils/API";
 import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
+
+import { useCourantContext } from "../../utils/CourantContext"
 
 // Setting the component's initial state
 //   constructor(props) {
@@ -77,35 +77,53 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // }
 
 
-function Up() {
+function UploadWork() {
+  const { logout } = useCourantContext();
+  const { id } = useParams();
+  const history = useHistory();
 
-  const [upload, setUpload] = useState("");
+  useEffect(() => {
 
-  //redirect to vehicle dashboard
-  const redirect = useHistory();
+    API.getUser(id)
+      .then((res) => {
+        if (res.data.isAuthenticated === false) {
+          return logout(history);
+        }
+        console.log("Get User successful")
+      })
+      .catch((err) => console.log(err));
+  })
 
-  // Sets input values into State
-  function createStoryValue(event) {
+  // Setting our component's initial state
+  const [formObject, setFormObject] = useState({});
+
+ // Handles updating component state when the user types into the input field
+  function handleInputChange(event) {
+    const { name, value } = event.target
+    setFormObject({...formObject, [name]: value})
     console.log(event.target.value)
-    setUpload(event.target.value);
   };
+
 
   const submitStory = (event) => {
     event.preventDefault();
-    console.log(upload);
-
-    // adding upload info from above structure
-    API.addStory(upload)
-      .then((response) => {
+ 
+    if (formObject.title && formObject.author) {
+      API.addStory({
+        author: formObject.author,
+        title: formObject.title,
+        textUpload: formObject.textUpload
+      })
+      .then((res) => {
         // if no error, redirect to profile
-        if (!response.data.errmsg) {
-          console.log(response.data);
-          // redirect.push("/profile");
-        }
+        history.push("/profile");
+     
       })
       .catch((error) => {
-        console.log(`Post error: ${error}`);
+        console.log(`error: ${error}`);
       });
+    }
+    
   };
 
   return (
@@ -113,19 +131,44 @@ function Up() {
       <form>
         <div className="col">
           <div className="form-group mt-5">
-            <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Please title your work" />
+            <input 
+              type="text" 
+              name="title"
+              className="form-control" 
+              placeholder="Please title your work"
+              onChange={handleInputChange} 
+            />
+            <input 
+              type="text" 
+              name="author"
+              className="form-control" 
+              placeholder="Author" 
+              onChange={handleInputChange} 
+            />
             <div className="textedit">
-              <CKEditor
+              {/* <CKEditor
                 editor={ClassicEditor}
-                // save this data:
-                set={upload}
+                name="textUpload"
                 data="<p>Tell your story...</p>"
                 onInit={editor => {
                   // You can store the "editor" and use when it is needed.
                   console.log('Editor is ready to use!', editor);
                 }}
-                onChange={createStoryValue}
-              />
+                onChange={handleInputChange}
+              /> */}
+
+              <div>
+                <form className="form">
+                  <textarea
+                    className="form-control"
+                    type="text"
+                    name="textUpload"
+                    onChange={handleInputChange}
+                    placeholder="Enter Story Here"
+                  />
+                </form>
+              </div>
+
             </div>
           </div>
           <div className="form-check">
@@ -134,25 +177,17 @@ function Up() {
               By checking this box I am confirming I own the rights to publish this work
             </label>
           </div>
-          <button href="#" type="submit" value={upload} onClick={submitStory} className="btn btn-primary mt-2 mb-2">PUBLISH</button>
+          <button 
+              disabled={!(formObject.author && formObject.title)}
+              type="submit" 
+              onClick={submitStory} 
+              className="btn btn-primary mt-2 mb-2">
+            PUBLISH
+            </button>
         </div>
       </form>
     </div>
   )
 }
 
-export default Up;
-
-// ------ THIS CODE WORKS: ------- //
-    // <div>
-    //   <form className="form">
-    //     <input
-    //       value={upload}
-    //       name="textUpload"
-    //       type="text"
-    //       onChange={createStoryValue}
-    //       placeholder="Enter Story Here"
-    //     />
-    //     <button onClick={submitStory}>Submit</button>
-    //   </form>
-    // </div>
+export default UploadWork;

@@ -4,17 +4,16 @@ import axios from "axios";
 export default {
   // USER ROUTES
   login: (username, password) => {
-    // had to add entire url, will it work on deployed version?
-    return axios.post("http://localhost:3001/api/user/login", {
+    return axios.post("/api/user/login", {
       username,
-      password
+      password,
     });
   },
 
   logout: () => axios.get("http://localhost:3001/api/user/logout"),
 
   getUser: function () {
-    return axios.get("http://localhost:3001/api/user/info");
+    return axios.get("/api/user/info");
   },
 
   signup: (userInfo) => {
@@ -22,12 +21,8 @@ export default {
     return axios.post("http://localhost:3001/api/user/signup", userInfo);
   },
 
-  // addStory: function (author, title, textUpload, imageUpload) {
-  //   return axios.post("/api/story", { author, title, textUpload, imageUpload });
-  // },
-
-  addStory: function(textUpload) {
-    return axios.post("http://localhost:3001/api/story", textUpload)
+  addStory: function (storyData) {
+    return axios.post("/api/story", storyData);
   },
 
   deleteStory: function (id) {
@@ -35,7 +30,12 @@ export default {
   },
 
   // get all stories by user is
-  getAllStories: () => {
-    return axios.get("http://localhost:3001/api/story");
+  findAllStories: () => {
+    return axios.get("/api/story");
+  },
+  
+  // Gets the book with the given id
+  getStory: (id) => {
+    return axios.get("/api/story" + id)
   }
 }

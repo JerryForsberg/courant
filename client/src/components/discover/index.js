@@ -1,28 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "./style.css";
-import API from "../../utils/API";
+import Sidenav from "../sidenav";
+import Navbar from "../navbar";
+import Footer from "../footer"
+import Disc from "../discover"
 
-function dis() {
-    const [state, setState] = useState([]);
-
-    const getAllStories = () => {
-        API.getAllStories()
-            .then(res => {
-                setState(res.data);
-            }).catch(err => {
-                console.log(err);
-            }
-            )
-    }
-
-    useEffect(() => {
-        getAllStories();
-    }, []);
+function Discover() {
 
     return (
         <div>
-            <div className="col-8 content-area">
+            {/* <div className="col-8 content-area"> */}
                 {/* <button>
                     {state.map((data) => (
                         <img src={data.imageUpload}>
@@ -31,11 +18,12 @@ function dis() {
                         </img>
                     ))}
                 </button> */}
+
+            {/* </div> */}
+        
             </div>
-        </div>
-    
         
     );
 }
 
-export default dis;
+export default Discover;
