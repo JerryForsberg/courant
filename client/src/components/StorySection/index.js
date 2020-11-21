@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
 import { useHistory, useParams } from "react-router-dom";
+import { Col, Row, Container } from "../Grid";
 import { useCourantContext } from "../../utils/CourantContext";
+import { List, ListItem } from "../List";
 
 function StoryCard(props) {
-  const { logout } = useCourantContext();
   const [story, setStory] = useState({})
   const { id } = useParams();
-
-  const history = useHistory();
 
   // When this component mounts, grab the book with the _id of props.match.params.id
   useEffect(() => {
@@ -45,15 +43,27 @@ function StoryCard(props) {
 }
 
 
-
-
 // Stories Card ==================================== |
 // This is where the stories wil display
 function StorySection() {
-  const [stories, setStories] = useState({});
+  const [stories, setStories] = useState([]);
+  const {logout } = useCourantContext();
+
+    const history = useHistory();
+    const { id } = useParams();
 
   // Loads all stories and sets them to stories
   useEffect(() => {
+
+    API.getUser(id)
+      .then((res) => {
+        if (res.data.isAuthenticated === false) {
+          return logout(history);
+        }
+        console.log("Get User successful")
+      })
+      .catch((err) => console.log(err));
+    
     API.findAllStories()
       .then(res =>
         setStories(res.data)
@@ -63,25 +73,30 @@ function StorySection() {
 
 
   return (
-    <div>
-      {/* populated stories will go in here */}
+    <Container fluid>
+      <Row>
+        <Col size="md-6 sm-12">
+          {/* populated stories will go in here */}
+          <h1>My Stories</h1>
+          {stories.length ? (
+            <List>
+              {stories.map(story => (
+                <ListItem key={story._id}>
+                  <Link to={"/story/" + story._id}>
+                    <strong>
+                      {story.title} by {story.author}
+                    </strong>
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+              <h3>No Results to Display</h3>
+            )}
 
-      {stories.length ? (
-        <li>
-          {stories.map(story => (
-            <ul key={story._id}>
-              <Link to={"/story/" + story._id}>
-                <strong>
-                  {story.title} by {story.author}
-                </strong>
-              </Link>
-            </ul>
-          ))}
-        </li>
-      ) : (
-          <h3>No Results to Display</h3>
-        )}
-    </div>
+         </Col>
+       </Row>
+    </Container>
   )
 }
 

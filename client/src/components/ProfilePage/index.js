@@ -13,8 +13,6 @@ function ProfilePage() {
     const { id } = useParams();
 
 
-    const [storyInfo, setStoryInfo] = useState([])
-
     // useEffect hook to display on page after render
     useEffect(() => {
 
@@ -27,7 +25,6 @@ function ProfilePage() {
         })
         .catch((err) => console.log(err));
 
-     
       }, []);
  
       
