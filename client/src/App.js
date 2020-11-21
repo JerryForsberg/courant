@@ -10,10 +10,9 @@ import Feed from "./pages/feed";
 import Home from "./pages/homepage";
 import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
-import UploadWork from "./pages/uploadwork";
+import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
 import Story from "./components/storiesCard";
-
 
 import { CourantProvider } from "./utils/CourantContext";
 
