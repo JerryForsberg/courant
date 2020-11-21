@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import API from "../utils/API"
-import { useHistory } from "react-router-dom";
 
 class textEditor extends Component {
 

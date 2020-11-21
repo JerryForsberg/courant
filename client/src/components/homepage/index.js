@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Navbar from "../navbar-white";
 import { Button } from "../button/Button";
 
-function home() {
+function Homepage() {
+
     const [button, setButton] = useState(true);
 
     return (
@@ -24,11 +25,11 @@ function home() {
                     </p>
                     </div>
                     <div>
-                    <Link to="/discover">
-                        {button && <Button buttonStyle="btn--outline">
-                            DISCOVER
+                        <Link to="/discover">
+                            {button && <Button buttonStyle="btn--outline">
+                                DISCOVER
                             </Button>}
-                            </Link>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -62,21 +63,21 @@ function home() {
                 </div>
             </div>
 
-{/* idea section */}
+            {/* idea section */}
 
-<div className="d-flex idea-section">
+            <div className="d-flex idea-section">
 
-<div className="col-6 mt-5">
-    <h1 className="idea-mid">Get your ideas</h1>
-    <h2 className="header2-mid">CROWD FUNDED</h2>
-    <p className="p2-mid">The creative process takes time, and it can be difficult to put that time in when it’s not followed by (financial) compensation. Your readers can choose to support your creative process by crowdfunding your stories.
-    </p>
-</div>
+                <div className="col-6 mt-5">
+                    <h1 className="idea-mid">Get your ideas</h1>
+                    <h2 className="header2-mid">CROWD FUNDED</h2>
+                    <p className="p2-mid">The creative process takes time, and it can be difficult to put that time in when it’s not followed by (financial) compensation. Your readers can choose to support your creative process by crowdfunding your stories.
+                    </p>
+                </div>
 
-<div className="col-6">
+                <div className="col-6">
 
-</div>
-</div>
+                </div>
+            </div>
         </>
 
         // <div className="container-fluid">
@@ -134,4 +135,4 @@ function home() {
     );
 }
 
-export default home;
+export default Homepage;

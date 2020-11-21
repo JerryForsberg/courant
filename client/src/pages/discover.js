@@ -4,7 +4,7 @@ import Sidenav from "../components/sidenav";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer"
 
-function discover() {
+function Discover() {
     return (
         <div>
             <div className="row mb-5">
@@ -17,4 +17,4 @@ function discover() {
     );
 }
 
-export default discover;
+export default Discover;

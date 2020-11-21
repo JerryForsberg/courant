@@ -1,14 +1,15 @@
 import React from "react";
-import Home from "../components/homepage";
+import Homepage from "../components/homepage";
 import Navbar from "../components/navbar";
 
-function home() {
+function Home() {
+
     return (
         <div>
             {/* <Navbar /> */}
-            < Home />
+            < Homepage />
         </div>
     );
 }
 
-export default home;
+export default Home;
