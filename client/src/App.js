@@ -10,30 +10,34 @@ import Feed from "./pages/feed";
 import Home from "./pages/homepage";
 import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
-import UploadWork from "./pages/uploadwork";
+import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
+import Book from "./pages/book";
+import Story from "./components/storiesCard";
 
 import { CourantProvider } from "./utils/CourantContext";
 
 function App() {
+  return(
+  <>
+    <CourantProvider>
+      <Router>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/account" component={Account} />
+        <Route exact path="/discover" component={Discover} />
+        <Route exact path="/feed" component={Feed} />
+        <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/signup" component={SignupForm} />
+        <Route exact path="/upload" component={Upload} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/story" component={Story} />
+        <Route exact path="/book" component={Book} />
 
-  return (
-    <>
-      <CourantProvider>
-        <Router>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/account" component={Account} />
-          <Route exact path="/discover" component={Discover} />
-          <Route exact path="/feed" component={Feed} />
-          <Route exact path="/login" component={LoginForm} />
-          <Route exact path="/signup" component={SignupForm} />
-          <Route exact path="/upload" component={UploadWork} />
-          <Route exact path="/profile" component={Profile} />
-        </Router>
-      </CourantProvider>
-      <Footer />
-
-    </>
+        {/* <Route exact path="/" component={} /> */}
+      </Router>
+    </CourantProvider>
+    <Footer />
+  </>
   );
 }
 
