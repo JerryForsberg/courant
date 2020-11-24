@@ -13,6 +13,7 @@ import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
 // import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
+import Book from "./pages/book";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route exact path="/signup" component={SignupForm} />
       {/* <Route exact path="/upload" component={Upload} /> */}
       <Route exact path="/profile" component={Profile} />
+      <Route exact path="/book" component={Book} />
       
       {/* <Route exact path="/" component={} /> */}
       

@@ -1,4 +1,14 @@
-.content-area {
-    background-color: grey;
-    width: 100vh;
+
+.profile-button {
+   width: 300px;
+    border: none;
+  background-color:white;
+    color: black;
+
+}
+.profile-button:hover {
+    width: 300px;
+    border: none;
+    background-color: black;
+    color: white;
 }
