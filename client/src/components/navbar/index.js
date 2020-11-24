@@ -3,7 +3,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 
-function nav() {
+function Navbar() {
     return (
         <div className="container-fluid">
             <nav className="nav nav-fill navbar navbar-expand-lg justify-content-center mt-2 mb-5">
@@ -41,4 +41,4 @@ function nav() {
     );
 }
 
-export default nav;
+export default Navbar;

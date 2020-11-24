@@ -1,12 +1,14 @@
 import React from "react";
 import "./style.css";
+import Navbar from "../navbar"
+import Accnt from "../account"
 
-function acct () {
+function Account () {
     return (
         <div>
-
+           
         </div>
     );
 }
 
-export default acct ;
+export default Account;
