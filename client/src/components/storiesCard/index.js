@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../Grid";
+import { Container } from "../Grid";
 import API from "../../utils/API";
+import Navbar from "../navbar-white"
+import "./style.css";
 
 function StoriesCard() {
   const [book, setBook] = useState({})
 
   // When this component mounts, grab the book with the _id of props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   const {id} = useParams()
   useEffect(() => {
     API.getStory(id)
@@ -16,29 +17,36 @@ function StoriesCard() {
   }, [])
 
   return (
+      <>
+      <Navbar />
       <Container fluid>
-        <Row>
-          <Col size="md-12">
+        <div className="storyStyle">
+        
               <h1>
-                {book.title} by {book.author}
+                {book.title}
               </h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
+              <h4>{book.author}</h4>
+          
+          <br/>
+          <br/>
+
             <article>
               <p>
                 {book.textUpload}
               </p>
             </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/profile">← Back to My Stories</Link>
-          </Col>
-        </Row>
+          
+            <Link to="/profile">
+            <button className="profile-button">
+                ← Back to My Stories
+            </button>
+            </Link>
+        
+        </div>
+        <br/>
+        <br/>
       </Container>
+      </>
     );
   }
 
