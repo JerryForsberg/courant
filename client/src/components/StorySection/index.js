@@ -42,17 +42,17 @@ function StorySection() {
           {/* populated stories will go in here */}
           <h1>My Stories</h1>
           {stories.length ? (
-            <List>
+            <Row>
               {stories.map(story => (
-                <ListItem key={story._id}>
                   <Link to={"/story/" + story._id}>
-                    <strong>
-                      {story.title} by {story.author}
-                    </strong>
+                    <button className="btn">
+                      <strong>
+                        {story.title} by {story.author}
+                      </strong>
+                    </button>
                   </Link>
-                </ListItem>
               ))}
-            </List>
+            </Row>
           ) : (
               <h3>No Results to Display</h3>
             )}
