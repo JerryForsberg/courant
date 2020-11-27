@@ -7,43 +7,6 @@ import { Col, Row, Container } from "../Grid";
 import { useCourantContext } from "../../utils/CourantContext";
 import { List, ListItem } from "../List";
 
-function StoryCard(props) {
-  const [story, setStory] = useState({})
-  const { id } = useParams();
-
-  // When this component mounts, grab the book with the _id of props.match.params.id
-  useEffect(() => {
-    API.getStory(id)
-      .then(res => setStory(res.data))
-      .catch(err => console.log(err));
-  }, [])
-
-  return (
-    <Container fluid>
-      <Row>
-        <Col size="md-12">
-          <h1>
-            {story.title} by {story.author}
-          </h1>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col size="md-10 md-offset-1">
-          <article>
-            <p>
-              {story.textUpload}
-            </p>
-          </article>
-        </Col>
-      </Row>
-    </Container>
-  )
-
-}
-
-
-// Stories Card ==================================== |
 // This is where the stories wil display
 function StorySection() {
   const [stories, setStories] = useState([]);
