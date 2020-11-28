@@ -36,6 +36,6 @@ export default {
   
   // Gets the book with the given id
   getStory: (id) => {
-    return axios.get("/api/story" + id)
+    return axios.get("/api/story/" + id)
   }
 }

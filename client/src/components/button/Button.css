@@ -46,6 +46,7 @@
     color: white;
     transition: all 0.3s ease-out;
 }
+
 .btn--outline:hover{
     background: white;
     color: black;
