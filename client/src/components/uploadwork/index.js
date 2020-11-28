@@ -103,11 +103,6 @@ function UploadWork() {
   function handleInputChange(event) {
     const { name, value } = event.target
     setFormObject({...formObject, [name]: value})
-<<<<<<< HEAD
-
-    console.log(event.target.value)
-=======
->>>>>>> c16420907c8c4ba0fddbd440aaaca3e028a3b189
   };
 
   const submitStory = (event) => {
