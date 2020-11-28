@@ -1,0 +1,11 @@
+
+.book-img {
+  width: 200px;
+  margin: 10px;
+}
+
+.book-i {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px 30px 0px;
+}

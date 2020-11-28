@@ -12,6 +12,7 @@ import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
 import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
+import Book from "./pages/book";
 import Story from "./components/storiesCard";
 
 import { CourantProvider } from "./utils/CourantContext";
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/story" component={Story} />
+        <Route exact path="/book" component={Book} />
 
         {/* <Route exact path="/" component={} /> */}
       </Router>
