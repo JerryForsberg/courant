@@ -38,10 +38,8 @@ function StoryCard(props) {
         </Col>
       </Row>
     </Container>
-  )
-
+  );
 }
-
 
 // Stories Card ==================================== |
 // This is where the stories wil display
