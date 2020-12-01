@@ -44,7 +44,7 @@ function Signup() {
             <div className="row">
                 <div className="col-6 sign-up-hero">
                     <h1 className="sign-up-hero-text">SHARE</h1>
-                    <h2 className="sign-up-hero-text2">Your story</h2>
+                    <h2 className="sign-up-hero-text2">YOUR STORY</h2>
                 </div>
 
                 {/* <!--right side form--> */}
@@ -61,7 +61,7 @@ function Signup() {
                     </a>
                         </p>
                     </div>
-                    <button type="submit" className="btn btn-primary login-buttons">Join using Google</button>
+                    <button type="submit" className="btn-primary login-buttons">Join using Google</button>
                     <form className="">
                         <div className="form-group">
                             <label for="exampleInputUser" className="login-label">Username</label>
@@ -81,7 +81,7 @@ function Signup() {
 
                         <button 
                         type="submit" 
-                        className="btn btn-dark login-button"
+                        className="btn-dark login-button"
                         onClick={submitUserSignup}
                         >
                             Join

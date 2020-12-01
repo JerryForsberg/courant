@@ -79,7 +79,7 @@ function Login() {
                                     type="password"
                                     name="password"
                                     id="password"
-                                    placeholder="Password"
+                                    // placeholder="Password"
                                     value={password}
                                     onChange={userPasswordValue}
                                 />
@@ -87,7 +87,7 @@ function Login() {
                             {/* Sign in */}
                             <button type="submit"
                                 onClick={handleSubmit}
-                                className="btn btn-dark login-button">
+                                className="btn-dark login-button">
                                 Sign in
                             </button>
                             {/* Forgot Password */}
@@ -97,7 +97,7 @@ function Login() {
                             <span className="line mb-5"></span>
                             {/* Create Account */}
                             <Link to="/signup">
-                                <button type="submit" className="btn btn-secondary login-buttons">
+                                <button type="submit" className="btn-secondary login-buttons">
                                     Create Account
                             </button>
                             </Link>
@@ -105,7 +105,8 @@ function Login() {
                     </div>
                     {/* <!--right side hero--> */}
                     <div className="col-6 login-hero">
-                        <h1 className="login-hero-text">TELL YOUR<br />STORY</h1>
+                        <h1 className="login-hero-text">TELL YOUR</h1>
+                        <h1 className="login-hero-text-story">STORY</h1>
                     </div>
                 </div>
             </div>

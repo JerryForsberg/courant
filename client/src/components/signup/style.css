@@ -15,7 +15,7 @@ body {
         font-size: 70%;
     }
     .login-buttons, .login-button {
-      width: 690px;
+      width: 696px;
       height: 40px;
       border-radius: 0px;
     }
@@ -25,13 +25,7 @@ body {
     .login-logo {
         width: 35%;
     }
-    .login-hero-text{
-        font-weight: 600;
-        color: #FFFCFC;
-        text-align: center;
-        margin-top: 50vh;
-        
-    }
+ 
     .login-input {
         border-radius: 0px;
     }
@@ -43,18 +37,21 @@ body {
     .sign-up-hero {
         background-image: url(/images/sign-up-hero.svg);
         background-size: cover;
+        padding: 0px;
+        margin: 0px;
+        height: 100vh;
     }
     .sign-up-hero-text{
         font-weight: 600;
         color: #FFFCFC;
         text-align: center;
-        margin-top: 20vh;
+        margin-top: 26vh;
         font-size:100px;
     }
     .sign-up-hero-text2{
         font-weight: 600;
         color: #FFFCFC;
         text-align: center;
-       
+       letter-spacing: -2px;
         font-size:50px;
     }
