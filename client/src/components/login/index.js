@@ -79,7 +79,7 @@ function Login() {
                                     type="password"
                                     name="password"
                                     id="password"
-                                    placeholder="Password"
+                                    // placeholder="Password"
                                     value={password}
                                     onChange={userPasswordValue}
                                 />
@@ -105,7 +105,8 @@ function Login() {
                     </div>
                     {/* <!--right side hero--> */}
                     <div className="col-6 login-hero">
-                        <h1 className="login-hero-text">TELL YOUR<br />STORY</h1>
+                        <h1 className="login-hero-text">TELL YOUR</h1>
+                        <h1 className="login-hero-text-story">STORY</h1>
                     </div>
                 </div>
             </div>

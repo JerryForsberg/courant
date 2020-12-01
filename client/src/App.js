@@ -36,7 +36,7 @@ function App() {
         {/* <Route exact path="/" component={} /> */}
       </Router>
     </CourantProvider>
-    <Footer />
+    {/* <Footer /> */}
   </>
   );
 }
