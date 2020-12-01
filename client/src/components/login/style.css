@@ -18,6 +18,7 @@ body {
       width: 696px;
       height: 40px;
       border-radius: 0px;
+      border: none;
     }
     .login-button {
     background-color: #070600;

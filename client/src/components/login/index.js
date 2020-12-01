@@ -87,7 +87,7 @@ function Login() {
                             {/* Sign in */}
                             <button type="submit"
                                 onClick={handleSubmit}
-                                className="btn btn-dark login-button">
+                                className="btn-dark login-button">
                                 Sign in
                             </button>
                             {/* Forgot Password */}
@@ -97,7 +97,7 @@ function Login() {
                             <span className="line mb-5"></span>
                             {/* Create Account */}
                             <Link to="/signup">
-                                <button type="submit" className="btn btn-secondary login-buttons">
+                                <button type="submit" className="btn-secondary login-buttons">
                                     Create Account
                             </button>
                             </Link>
