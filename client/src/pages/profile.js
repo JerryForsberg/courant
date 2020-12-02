@@ -18,7 +18,6 @@ function ProfilePage() {
                 <Profnav />
                 <Profile />
                 <StorySection />
-                
             </div>
             <Footer />
         </div>

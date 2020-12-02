@@ -46,9 +46,9 @@ function profnav() {
                     </ol>
                 </div>
 
-                <Link to="/upload">
-                {button && <Button buttonStyle="btn--primary">Upload Work</Button>}
-                </Link>
+                {/* <Link to="/upload">
+                {button && <Button buttonStyle="btn--primary"></Button>}
+                </Link> */}
             </div>
         </div>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 import { useCourantContext } from "../../utils/CourantContext"
@@ -11,7 +11,6 @@ function ProfilePage() {
 
     const history = useHistory();
     const { id } = useParams();
-
 
     // useEffect hook to display on page after render
     useEffect(() => {
@@ -38,7 +37,10 @@ function ProfilePage() {
                 <div className="row">
                     <div className="col-10 d-flex mx-auto">
                     <div className="mx-auto">
-                        <button className="profile-buttons" ><i class="fas fa-plus"></i></button>
+
+                    <Link to="/upload">
+                    <button className="profile-buttons" ><i class="fas fa-plus"></i></button>
+                   </Link>
                         <button className="profile-buttons"><i class="fas fa-user"></i></button>
                         <button className="profile-buttons"><i class="fas fa-shopping-bag"></i></button>
                         </div>
