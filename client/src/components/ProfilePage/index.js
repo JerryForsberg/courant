@@ -38,9 +38,9 @@ function ProfilePage() {
                 <div className="row">
                     <div className="col-10 d-flex mx-auto">
                     <div className="mx-auto">
-                        <button className="profile-button" ><i class="fas fa-plus"></i></button>
-                        <button className="profile-button"><i class="fas fa-user"></i></button>
-                        <button className="profile-button"><i class="fas fa-shopping-bag"></i></button>
+                        <button className="profile-buttons" ><i class="fas fa-plus"></i></button>
+                        <button className="profile-buttons"><i class="fas fa-user"></i></button>
+                        <button className="profile-buttons"><i class="fas fa-shopping-bag"></i></button>
                         </div>
                     </div>
 

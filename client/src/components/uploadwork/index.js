@@ -8,7 +8,6 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 import { useCourantContext } from "../../utils/CourantContext";
 // import { isBoolean } from "lodash";
 
-// import { Input, Button, Checkbox } from "react-advanced-form"; 
 // Setting the component's initial state
 //   constructor(props) {
 //     super(props);
@@ -125,12 +124,6 @@ function UploadWork() {
     
   };
 
-  const handleOnChangeAgreementCheckbox = (e) => {
-    this.setState({
-      agree: e.target.value
-    })
-   };
-
   return (
     <div>
       <form>
@@ -176,16 +169,6 @@ function UploadWork() {
 
             </div>
           </div>
-          {/* <div className="form-check">
-            <Checkbox name="agree" className="form-check-input" type="checkbox" checked={this.state.active} value={this.state.checked} id="invalidCheck" onClick={() => this.handleOnChangeAgreementCheckbox()} required/>
-            {/* <input className="form-check-input" type="checkbox" id="gridCheck1" required/> */}
-            <label className="form-check-label" for="invalidCheck">
-              By checking this box I am confirming I own the rights to publish this work
-            </label>
-            {/* <div class="invalid-feedback">
-            You must agree before submitting.
-          </div> 
-          </div> */}
           <button 
               disabled={!(formObject.author && formObject.title)}
               type="submit" 

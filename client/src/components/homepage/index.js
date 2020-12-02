@@ -91,18 +91,14 @@ function Homepage() {
                 </div>
             </div>
 
-            <div className="d-flex">
-
-                <div className="col-6 mt-5">
-                    <div className="col-6">
-                        <img className="book-dude" src="./images/bookguy.png" alt="aspiring writer at a laptop writing" />
-                    </div>
-                    <h1 className="header-mid">Aspiring Writers</h1>
-                    <p className="p-mid">Refine your craft with feedback from other writers, and earn acclaim for your work while publishing on your own schedule.
-    </p>
+            <div className="library-sect d-flex">
+                <div className="col-6">
+                    <img className="book-dude" src="./images/bookguy.png" alt="aspiring writer at a laptop writing" />
                 </div>
-
-
+                <div className="col-6">
+                    <h1 className="header-mid">Create a Library</h1>
+                    <p className="p-mid">Refine your craft with feedback from other writers, and earn acclaim for your work while publishing on your own schedule.</p>
+                </div>
             </div>
         </>
 
