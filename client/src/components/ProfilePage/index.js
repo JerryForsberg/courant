@@ -48,6 +48,7 @@ function ProfilePage() {
 
                 </div>
                 <div className="row">
+                    <Link to="/book">
                     <div className="col-5 d-flex">
                         <img src="../images/profile-example1.jpg" alt="book cover" className="discover-img" />
                         <img src="../images/profile-example2.jpg" alt="book cover" className="discover-img" />
@@ -55,15 +56,18 @@ function ProfilePage() {
                         <img src="../images/profile-example4.jpg" alt="book cover" className="discover-img" />
 
                     </div>
-
+                    </Link>
                 </div>
 
                 <div className="row">
                     <div className="col-5 d-flex">
+                    <Link to="/book">
+
                         <img src="../images/profile-example5.jpg" alt="book cover" className="discover-img" />
                         <img src="../images/profile-example6.jpg" alt="book cover" className="discover-img" />
                         <img src="../images/profile-example7.jpg" alt="book cover" className="discover-img" />
                         <img src="../images/profile-example8.jpg" alt="book cover" className="discover-img" />
+                        </Link>
 
                     </div>
 
