@@ -1,12 +1,12 @@
 
-.profile-button {
+.profile-buttons {
    width: 300px;
     border: none;
   background-color:white;
     color: black;
 
 }
-.profile-button:hover {
+.profile-buttons:hover {
     width: 300px;
     border: none;
     background-color: black;

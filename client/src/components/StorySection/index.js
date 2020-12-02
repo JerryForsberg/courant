@@ -40,7 +40,7 @@ function StorySection() {
       <Row>
         <Col size="md-6 sm-12">
           {/* populated stories will go in here */}
-          <h1>My Stories</h1>
+          {/* <h1>My Stories</h1>
           {stories.length ? (
             <Row>
               {stories.map(story => (
@@ -55,7 +55,7 @@ function StorySection() {
             </Row>
           ) : (
               <h3>No Results to Display</h3>
-            )}
+            )} */}
 
          </Col>
        </Row>

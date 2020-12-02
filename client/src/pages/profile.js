@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import Profnav from "../components/profnav";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import Profile from "../components/ProfilePage"
-import { useCourantContext } from "../utils/CourantContext"
+import Profile from "../components/ProfilePage";
+import { useCourantContext } from "../utils/CourantContext";
 import API from "../utils/API";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import StorySection from "../components/StorySection";
+
 
 function ProfilePage() {
 
@@ -17,8 +18,9 @@ function ProfilePage() {
                 <Profnav />
                 <Profile />
                 <StorySection />
-
+                
             </div>
+            <Footer />
         </div>
     );
 }
