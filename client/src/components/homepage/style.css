@@ -93,3 +93,11 @@ margin-top: 60px;
     font-size: 40px;
     margin-left: 50px;
 }
+.library-sect{
+    flex-direction: row;
+}
+.book-dude {
+    width: 570px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}

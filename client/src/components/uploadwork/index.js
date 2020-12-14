@@ -8,7 +8,6 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 import { useCourantContext } from "../../utils/CourantContext";
 // import { isBoolean } from "lodash";
 
-// import { Input, Button, Checkbox } from "react-advanced-form"; 
 // Setting the component's initial state
 //   constructor(props) {
 //     super(props);
@@ -94,15 +93,15 @@ function UploadWork() {
         console.log("Get User successful")
       })
       .catch((err) => console.log(err));
-  })
+  }, [submitStory])
 
   // Setting our component's initial state
   const [formObject, setFormObject] = useState({});
 
- // Handles updating component state when the user types into the input field
+  // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target
-    setFormObject({...formObject, [name]: value})
+    setFormObject({ ...formObject, [name]: value })
   };
 
   const submitStory = (event) => {
@@ -113,42 +112,36 @@ function UploadWork() {
         title: formObject.title,
         textUpload: formObject.textUpload,
       })
-      .then((res) => {
-        // if no error, redirect to profile
-        history.push("/profile");
-     
-      })
-      .catch((error) => {
-        console.log(`error: ${error}`);
-      });
-    }
-    
-  };
+        .then((res) => {
+          // if no error, redirect to profile
+          history.push("/profile");
 
-  const handleOnChangeAgreementCheckbox = (e) => {
-    this.setState({
-      agree: e.target.value
-    })
-   };
+        })
+        .catch((error) => {
+          console.log(`error: ${error}`);
+        });
+    }
+
+  };
 
   return (
     <div>
       <form>
         <div className="col">
           <div className="form-group mt-5">
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="title"
-              className="form-control" 
+              className="form-control"
               placeholder="Please title your work"
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
             />
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="author"
-              className="form-control" 
-              placeholder="Author" 
-              onChange={handleInputChange} 
+              className="form-control"
+              placeholder="Author"
+              onChange={handleInputChange}
             />
             <div className="textedit">
               {/* <CKEditor
@@ -176,21 +169,11 @@ function UploadWork() {
 
             </div>
           </div>
-          <div className="form-check">
-            {/* <Checkbox name="agree" className="form-check-input" type="checkbox" checked={this.state.active} value={this.state.checked} id="invalidCheck" onClick={() => this.handleOnChangeAgreementCheckbox()} required/> */}
-            <input className="form-check-input" type="checkbox" id="gridCheck1" required/>
-            <label className="form-check-label" for="invalidCheck">
-              By checking this box I am confirming I own the rights to publish this work
-            </label>
-            {/* <div class="invalid-feedback">
-            You must agree before submitting.
-          </div> */}
-          </div>
-          <button 
-              disabled={!(formObject.author && formObject.title)}
-              type="submit" 
-              onClick={submitStory} 
-              className="btn btn-primary mt-2 mb-2">
+          <button
+            disabled={!(formObject.author && formObject.title)}
+            type="submit"
+            onClick={submitStory}
+            className="btn btn-primary mt-2 mb-2">
             PUBLISH
             </button>
         </div>

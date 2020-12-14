@@ -10,8 +10,27 @@
    
 
 }
-
+.footer-links-items {
+   border-style: none solid none none;
+   border-color: white;
+   border-width: .5px;
+}
 .logo-footer {
 width: 18rem;
 margin-left: 25px;
 }
+.footer-header{
+   font-family: hero-new-hairline, sans-serif;
+   font-weight: 100;
+   font-style: normal;
+   color: white;
+   font-size: 16px;
+   margin-left: 80px;
+}
+.footer-icons{
+color: white;
+font-size: 30px;
+margin: 20px;
+padding-top: 30px;
+}
+

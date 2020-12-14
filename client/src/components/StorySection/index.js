@@ -9,6 +9,7 @@ import { List, ListItem } from "../List";
 
 // This is where the stories wil display
 function StorySection() {
+  
   const [stories, setStories] = useState([]);
   const {logout } = useCourantContext();
 
@@ -34,13 +35,13 @@ function StorySection() {
       .catch(err => console.log(err));
   }, []);
 
-
+ 
   return (
     <Container fluid>
       <Row>
         <Col size="md-6 sm-12">
           {/* populated stories will go in here */}
-          <h1>My Stories</h1>
+          {/* <h1>My Stories</h1>
           {stories.length ? (
             <Row>
               {stories.map(story => (
@@ -55,7 +56,7 @@ function StorySection() {
             </Row>
           ) : (
               <h3>No Results to Display</h3>
-            )}
+            )} */}
 
          </Col>
        </Row>
