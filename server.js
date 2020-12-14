@@ -46,7 +46,15 @@ app.use(passport.session());
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/courant");
+// const mongoURI = "mongodb+srv://thecourantgroup:storydata1@cluster0.oaeup.mongodb.net/uploads?retryWrites=true&w=majority"
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/courant",
+  {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+  }
+);
+
 
 // Start the API server
 app.listen(PORT, function () {

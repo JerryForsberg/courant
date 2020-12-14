@@ -92,59 +92,68 @@ function UploadWork() {
         console.log("Get User successful")
       })
       .catch((err) => console.log(err));
-  })
+  }, [submitStory])
 
   // Setting our component's initial state
   const [formObject, setFormObject] = useState({});
 
- // Handles updating component state when the user types into the input field
+  // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target
-    setFormObject({...formObject, [name]: value})
+    setFormObject({ ...formObject, [name]: value })
+    console.log(formObject);
   };
 
 
   const submitStory = (event) => {
     event.preventDefault();
- 
-    if (formObject.title && formObject.author) {
+
+    // if (formObject.title && formObject.author) {
+
       API.addStory({
         author: formObject.author,
         title: formObject.title,
-        textUpload: formObject.textUpload
+        textUpload: formObject.textUpload,
+
       })
-      .then((res) => {
-        // if no error, redirect to profile
-        history.push("/profile");
-     
-      })
-      .catch((error) => {
-        console.log(`error: ${error}`);
-      });
-    }
-    
+      // API.addImage({
+      //   file: formObject.file
+      // })
+        .then((res) => {
+          // if no error, redirect to profile
+          history.push("/profile");
+
+        })
+        .catch((error) => {
+          console.log(`error: ${error}`);
+        });
+    // }
+
   };
 
   return (
     <div>
-      <form>
+      <form encType="multipart/form-data">
         <div className="col">
+
+
           <div className="form-group mt-5">
-            <input 
-              type="text" 
+
+            <input
+              type="text"
               name="title"
-              className="form-control" 
+              className="form-control"
               placeholder="Please title your work"
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
             />
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="author"
-              className="form-control" 
-              placeholder="Author" 
-              onChange={handleInputChange} 
+              className="form-control"
+              placeholder="Author"
+              onChange={handleInputChange}
             />
-            <div className="textedit">
+            {/* <div className="textedit"> */}
               {/* <CKEditor
                 editor={ClassicEditor}
                 name="textUpload"
@@ -165,25 +174,32 @@ function UploadWork() {
                     onChange={handleInputChange}
                     placeholder="Enter Story Here"
                   />
+                  {/* <input
+                    type="file"
+                    name="file"
+                    className="form-control"
+                    placeholder="Please upload an image"
+                    onChange={handleInputChange}
+                  /> */}
                 </form>
               </div>
 
             </div>
           </div>
-          <div className="form-check">
+          {/* <div className="form-check">
             <input className="form-check-input" type="checkbox" id="gridCheck1" />
             <label className="form-check-label" for="gridCheck1">
               By checking this box I am confirming I own the rights to publish this work
             </label>
-          </div>
-          <button 
-              disabled={!(formObject.author && formObject.title)}
-              type="submit" 
-              onClick={submitStory} 
-              className="btn btn-primary mt-2 mb-2">
+          </div> */}
+          <button
+            disabled={!(formObject.author && formObject.title)}
+            type="submit"
+            onClick={submitStory}
+            className="btn btn-primary mt-2 mb-2">
             PUBLISH
             </button>
-        </div>
+        {/* </div> */}
       </form>
     </div>
   )

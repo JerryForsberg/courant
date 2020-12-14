@@ -22,7 +22,7 @@ module.exports = {
             author: req.body.author,
             title: req.body.title,
             textUpload: req.body.textUpload,
-            // imageUpload: req.body.imageUpload
+            // file: req.body.file
         })
         .then((dbStory) => {
             db.User.findOneAndUpdate(

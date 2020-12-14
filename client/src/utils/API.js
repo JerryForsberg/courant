@@ -37,5 +37,11 @@ export default {
   // Gets the book with the given id
   getStory: (id) => {
     return axios.get("/api/story/" + id)
+  },
+
+  addImage: (file) => {
+    return axios.post("/api/images/upload", file)
   }
+
+  
 }
