@@ -17,12 +17,8 @@ function ProfilePage() {
                 <Navbar />
                 <Profnav />
                 <Profile />
-<<<<<<< HEAD
-
-=======
                 <StorySection />
                 
->>>>>>> master
             </div>
             <Footer />
         </div>
