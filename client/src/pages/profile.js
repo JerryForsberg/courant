@@ -16,7 +16,6 @@ function ProfilePage() {
                 <Navbar />
                 <Profnav />
                 <Profile />
-                <StorySection />
 
             </div>
         </div>
