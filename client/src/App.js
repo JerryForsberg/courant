@@ -37,7 +37,7 @@ function App() {
 
       </Router>
     </CourantProvider>
-    <Footer />
+    {/* <Footer /> */}
   </>
   );
 }

@@ -15,9 +15,10 @@ body {
         font-size: 70%;
     }
     .login-buttons, .login-button {
-      width: 690px;
+      width: 696px;
       height: 40px;
       border-radius: 0px;
+      border: none;
     }
     .login-button {
     background-color: #070600;
@@ -29,11 +30,21 @@ body {
         font-weight: 600;
         color: #FFFCFC;
         text-align: center;
-        margin-top: 50vh;
+        margin-top: 38vh;
         font-size: 90px;
     }
+.login-hero-text-story {
+    font-weight: 600;
+    color: #FFFCFC;
+    text-align: center;
+    
+    font-size: 140px;
+}
+
     .login-input {
         border-radius: 0px;
+        margin-left: 0px;
+        text-align: left;
     }
     .login-hero {
         background-image: url(/images/login-pic.svg);

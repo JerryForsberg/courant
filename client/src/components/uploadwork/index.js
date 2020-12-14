@@ -5,7 +5,8 @@ import API from "../../utils/API";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 
-import { useCourantContext } from "../../utils/CourantContext"
+import { useCourantContext } from "../../utils/CourantContext";
+// import { isBoolean } from "lodash";
 
 // Setting the component's initial state
 //   constructor(props) {
@@ -101,24 +102,16 @@ function UploadWork() {
   function handleInputChange(event) {
     const { name, value } = event.target
     setFormObject({ ...formObject, [name]: value })
-    console.log(formObject);
   };
-
 
   const submitStory = (event) => {
     event.preventDefault();
-
-    // if (formObject.title && formObject.author) {
-
+    if (formObject.title && formObject.author) {
       API.addStory({
         author: formObject.author,
         title: formObject.title,
         textUpload: formObject.textUpload,
-
       })
-      // API.addImage({
-      //   file: formObject.file
-      // })
         .then((res) => {
           // if no error, redirect to profile
           history.push("/profile");
@@ -127,18 +120,15 @@ function UploadWork() {
         .catch((error) => {
           console.log(`error: ${error}`);
         });
-    // }
+    }
 
   };
 
   return (
     <div>
-      <form encType="multipart/form-data">
+      <form>
         <div className="col">
-
-
           <div className="form-group mt-5">
-
             <input
               type="text"
               name="title"
@@ -153,7 +143,7 @@ function UploadWork() {
               placeholder="Author"
               onChange={handleInputChange}
             />
-            {/* <div className="textedit"> */}
+            <div className="textedit">
               {/* <CKEditor
                 editor={ClassicEditor}
                 name="textUpload"
@@ -174,24 +164,11 @@ function UploadWork() {
                     onChange={handleInputChange}
                     placeholder="Enter Story Here"
                   />
-                  {/* <input
-                    type="file"
-                    name="file"
-                    className="form-control"
-                    placeholder="Please upload an image"
-                    onChange={handleInputChange}
-                  /> */}
                 </form>
               </div>
 
             </div>
           </div>
-          {/* <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck1" />
-            <label className="form-check-label" for="gridCheck1">
-              By checking this box I am confirming I own the rights to publish this work
-            </label>
-          </div> */}
           <button
             disabled={!(formObject.author && formObject.title)}
             type="submit"
@@ -199,7 +176,7 @@ function UploadWork() {
             className="btn btn-primary mt-2 mb-2">
             PUBLISH
             </button>
-        {/* </div> */}
+        </div>
       </form>
     </div>
   )

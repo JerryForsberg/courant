@@ -55,8 +55,8 @@ margin-top: 60px;
 }
 .idea-section{
     background-color: #070600;
-    z-index: -1;
-    height: 300px;
+   
+    
 }
 .p2-mid{
     color: #fff;
@@ -73,4 +73,31 @@ margin-top: 60px;
     font-weight: bolder;
     font-size: 50px;
     margin-top: 60px;
+}
+.test-pic {
+    width: 85px;
+    display: flex;
+
+}
+.testimony {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    
+}
+.quote{
+    font-family: hero-new-hairline, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: white;
+    font-size: 40px;
+    margin-left: 50px;
+}
+.library-sect{
+    flex-direction: row;
+}
+.book-dude {
+    width: 570px;
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
