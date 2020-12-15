@@ -23,12 +23,12 @@ function StorySection() {
   // Loads all stories and sets them to stories
   useEffect(() => {
 
-    grabUser();
-    loadStories();
+    grabUser()
+    loadStories()
 
   }, []);
   
-  function grabUser () {
+  function grabUser() {
     API.getUser(id)
         .then((res) => {
           if (res.data.isAuthenticated === false) {
@@ -42,6 +42,7 @@ function StorySection() {
     API.findAllStories()
         .then((res) => {
             setStories(res.data)
+            console.log("loaded stories")
           // else {
           //   // redirect to 404 page
           //   history.push("/notfound")
@@ -52,8 +53,9 @@ function StorySection() {
 
   function deleteButton(id) {
     API.deleteStory(id)
-      
-      .then(res => loadStories())
+      .then(res => 
+        loadStories()
+        )
       .catch(err => console.log(err));
   }
 
@@ -76,7 +78,7 @@ function StorySection() {
                       </strong>
                     </button>
                   </Link>
-                  <DeleteBtn onClick={() => deleteButton(story._id)} >✗</DeleteBtn>
+                  <DeleteBtn onClick={() => deleteButton(story._id)} />
                   </ListItem>
               ))}
             </List>
