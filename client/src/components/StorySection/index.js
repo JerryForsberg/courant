@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
 import { useCourantContext } from "../../utils/CourantContext";
+import DeleteBtn from "../DeleteBtn"
 import { List, ListItem } from "../List";
 
 // This is where the stories wil display
@@ -12,28 +13,49 @@ function StorySection() {
   
   const [stories, setStories] = useState([]);
   const {logout } = useCourantContext();
+  const [storyError, setStoryError] = useState(false);
 
-    const history = useHistory();
-    const { id } = useParams();
+  const history = useHistory();
+  const { id } = useParams();
+
+  // if no stories, display error
 
   // Loads all stories and sets them to stories
   useEffect(() => {
 
-    API.getUser(id)
-      .then((res) => {
-        if (res.data.isAuthenticated === false) {
-          return logout(history);
-        }
-        console.log("Get User successful")
-      })
-      .catch((err) => console.log(err));
-    
-    API.findAllStories()
-      .then(res =>
-        setStories(res.data)
-      )
-      .catch(err => console.log(err));
+    grabUser();
+    loadStories();
+
   }, []);
+  
+  function grabUser () {
+    API.getUser(id)
+        .then((res) => {
+          if (res.data.isAuthenticated === false) {
+            return logout(history);
+          }
+        })
+        .catch((err) => console.log(err));
+  }
+
+  function loadStories() {
+    API.findAllStories()
+        .then((res) => {
+            setStories(res.data)
+          // else {
+          //   // redirect to 404 page
+          //   history.push("/notfound")
+          // }
+        })
+        .catch(err => console.log(err));
+    }
+
+  function deleteButton(id) {
+    API.deleteStory(id)
+      
+      .then(res => loadStories())
+      .catch(err => console.log(err));
+  }
 
  
   return (
@@ -41,10 +63,12 @@ function StorySection() {
       <Row>
         <Col size="md-6 sm-12">
           {/* populated stories will go in here */}
-          {/* <h1>My Stories</h1>
+          <h1>My Stories</h1>
+
           {stories.length ? (
-            <Row>
+            <List>
               {stories.map(story => (
+                <ListItem key={story._id}>
                   <Link to={"/story/" + story._id}>
                     <button className="btn">
                       <strong>
@@ -52,11 +76,13 @@ function StorySection() {
                       </strong>
                     </button>
                   </Link>
+                  <DeleteBtn onClick={() => deleteButton(story._id)} >✗</DeleteBtn>
+                  </ListItem>
               ))}
-            </Row>
+            </List>
           ) : (
-              <h3>No Results to Display</h3>
-            )} */}
+              <h3>No Results to Display</h3> 
+            )}
 
          </Col>
        </Row>

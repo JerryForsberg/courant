@@ -29,7 +29,11 @@ export default {
     return axios.delete(`/api/story/${id}`);
   },
 
-  // get all stories by user is
+  editStory: function(id) {
+    return axios.post('/api/story/' + id)
+  },
+
+  // get all stories by user id
   findAllStories: () => {
     return axios.get("/api/story");
   },

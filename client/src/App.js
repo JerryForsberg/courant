@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 
 // import logo from './logo.svg';
 import './App.css';
@@ -21,21 +21,21 @@ function App() {
   return(
   <>
     <CourantProvider>
-      <Router>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/account" component={Account} />
-        <Route exact path="/discover" component={Discover} />
-        <Route exact path="/feed" component={Feed} />
-        <Route exact path="/login" component={LoginForm} />
-        <Route exact path="/signup" component={SignupForm} />
-        <Route exact path="/upload" component={Upload} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/story/:id">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/account" component={Account} />
+          <Route exact path="/discover" component={Discover} />
+          <Route exact path="/feed" component={Feed} />
+          <Route exact path="/login" component={LoginForm} />
+          <Route exact path="/signup" component={SignupForm} />
+          <Route exact path="/upload" component={Upload} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/story/:id">
             <StoriesCard />
-        </Route>
-        <Route exact path="/book" component={Book} />
-
-      </Router>
+          </Route>
+          <Route exact path="/book" component={Book} />
+        </Switch>
+       
     </CourantProvider>
     {/* <Footer /> */}
   </>

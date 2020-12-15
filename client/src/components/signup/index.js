@@ -60,14 +60,14 @@ function Signup() {
                     <div className="text-center mt-5 mb-5">
                         <p>Already have an account?
                         <a>
-                                <Link to="/login">
-                                    Login
+                        <Link to="/login">
+                            Login
                         </Link>
                             </a>
                         </p>
                     </div>
                     <button type="submit" className="btn-primary login-buttons">Join using Google</button>
-                    
+
                     {/* SignUp Failed Validation Error */}
                     {signupFail ? (
                         <p className="text-center text-danger">
