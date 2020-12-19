@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/story/:id">
-             <StoriesCard /> 
+            <StoriesCard /> 
         </Route>
         <Route exact path="/book" component={Book} />
 
