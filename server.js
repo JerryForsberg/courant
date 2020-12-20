@@ -1,22 +1,23 @@
 const express = require("express");
-const session = require("express-session");
-const passport = require("./config/passport");
-const mongoose = require("mongoose");
-const routes = require("./routes/index.js");
-const app = express();
-const PORT = process.env.PORT || 3001;
+const session = require("express-session")
+const passport = require('./config/passport')
 
-const cors = require("cors");
+const mongoose = require('mongoose')
+const routes = require('./routes/index.js')
+const app = express()
+const PORT = process.env.PORT || 3001
+
+const cors = require('cors')
 
 let corsOptions = {
-  origin: "http://localhost:3000"
+  origin: 'http://localhost:3000',
 }
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 // Serve up static assets (on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
 }
 
 // Passport init
@@ -24,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 app.set('trust proxy', 1)
 app.use(
   session({
-    secret: "secret",
+    secret: 'secret',
     saveUninitialized: true,
     resave: true,
     cookie: { secure: false },
@@ -33,30 +34,27 @@ app.use(
     //   collection: 'sessions'
     // })
   })
-);
+)
 
 //setting up cors to interact with front end
-app.use(cors(corsOptions));
+      app.use(cors(corsOptions))
 
 // Passport init
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Add routes, both API and view
-app.use(routes);
+app.use(routes)
 
 // Connect to the Mongo DB
 // const mongoURI = "mongodb+srv://thecourantgroup:storydata1@cluster0.oaeup.mongodb.net/uploads?retryWrites=true&w=majority"
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/courant",
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-  }
-);
-
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/courant', {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+})
 
 // Start the API server
 app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
+})

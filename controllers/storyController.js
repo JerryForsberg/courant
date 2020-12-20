@@ -7,7 +7,7 @@ module.exports = {
           .find({ user: req.user._id})
           .then((dbStory) => res.json(dbStory))
           .catch((err) => res.status(422).json(err));
-    },
+  },
 
     // ------ UNSURE IF NEEDED ------- //
     findById: function (req, res) {
