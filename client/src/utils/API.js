@@ -30,7 +30,7 @@ export default {
   },
 
   editStory: function(id) {
-    return axios.post('/api/story/' + id)
+    return axios.put('/api/story/' + id)
   },
 
   // get all stories by user id

@@ -99,6 +99,9 @@ function UploadWork() {
   const [formObject, setFormObject] = useState({});
 
   // Handles updating component state when the user types into the input field
+
+  // Cannot read property 'name' of undefined
+  //   at Object.handleInputChange [as onChange]
   function handleInputChange(event) {
     const { name, value } = event.target
     setFormObject({ ...formObject, [name]: value })
@@ -144,7 +147,7 @@ function UploadWork() {
               onChange={handleInputChange}
             />
             <div className="textedit">
-              {/* <CKEditor
+              <CKEditor
                 editor={ClassicEditor}
                 name="textUpload"
                 data="<p>Tell your story...</p>"
@@ -153,9 +156,9 @@ function UploadWork() {
                   console.log('Editor is ready to use!', editor);
                 }}
                 onChange={handleInputChange}
-              /> */}
+              />
 
-              <div>
+              {/* <div>
                 <form className="form">
                   <textarea
                     className="form-control"
@@ -165,7 +168,7 @@ function UploadWork() {
                     placeholder="Enter Story Here"
                   />
                 </form>
-              </div>
+              </div> */}
 
             </div>
           </div>

@@ -11,7 +11,7 @@ import { List, ListItem } from "../List";
 // This is where the stories wil display
 function StorySection() {
   
-  const [stories, setStories] = useState([]);
+  const [stories, setStories] = useState();
   const {logout } = useCourantContext();
   const [storyError, setStoryError] = useState(false);
 
@@ -66,8 +66,12 @@ function StorySection() {
         <Col size="md-6 sm-12">
           {/* populated stories will go in here */}
           <h1>My Stories</h1>
+          
+{/* if user not logged in, says stories.map is not a function */}
+{/* redirect if not logged in */}
+{/* add isAuthenticated for login for every page */}
 
-          {stories.length ? (
+          {Array.isArray(stories) ? (
             <List>
               {stories.map(story => (
                 <ListItem key={story._id}>
