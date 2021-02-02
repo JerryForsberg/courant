@@ -93,15 +93,15 @@ function UploadWork() {
         console.log("Get User successful")
       })
       .catch((err) => console.log(err));
-  })
+  }, [submitStory])
 
   // Setting our component's initial state
   const [formObject, setFormObject] = useState({});
 
- // Handles updating component state when the user types into the input field
+  // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target
-    setFormObject({...formObject, [name]: value})
+    setFormObject({ ...formObject, [name]: value })
   };
 
   const submitStory = (event) => {
@@ -111,74 +111,75 @@ function UploadWork() {
         author: formObject.author,
         title: formObject.title,
         textUpload: formObject.textUpload,
+        coverImage: formObject.coverImage
+
       })
-      .then((res) => {
-        // if no error, redirect to profile
-        history.push("/profile");
-     
-      })
-      .catch((error) => {
-        console.log(`error: ${error}`);
-      });
+
+        // API.addImage({
+        //   file: formObject.file
+        // })
+        .then((res) => {
+          // if no error, redirect to profile
+          history.push("/profile");
+
+        })
+        .catch((error) => {
+          console.log(`error: ${error}`);
+        });
     }
-    
+
   };
 
   return (
     <div>
-      <form>
+      <form enctype="multipart/form-data">
         <div className="col">
           <div className="form-group mt-5">
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="title"
-              className="form-control" 
+              className="form-control"
               placeholder="Please title your work"
-              onChange={handleInputChange} 
+              onChange={handleInputChange}
             />
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="author"
-              className="form-control" 
-              placeholder="Author" 
-              onChange={handleInputChange} 
+              className="form-control"
+              placeholder="Author"
+              onChange={handleInputChange}
             />
-            <div className="textedit">
-              {/* <CKEditor
-                editor={ClassicEditor}
-                name="textUpload"
-                data="<p>Tell your story...</p>"
-                onInit={editor => {
-                  // You can store the "editor" and use when it is needed.
-                  console.log('Editor is ready to use!', editor);
-                }}
-                onChange={handleInputChange}
-              /> */}
+            <input
+              type="file"
+              name="coverImage"
+              className="form-control"
+              class="filepond"
+              placeholder="upload image"
+              onChange={handleInputChange}
+            />
+            <textarea
+              className="form-control"
+              type="text"
+              name="textUpload"
+              onChange={handleInputChange}
+              placeholder="Enter Story Here"
+            />
 
-              <div>
-                <form className="form">
-                  <textarea
-                    className="form-control"
-                    type="text"
-                    name="textUpload"
-                    onChange={handleInputChange}
-                    placeholder="Enter Story Here"
-                  />
-                </form>
-              </div>
 
-            </div>
+
+
           </div>
-          <button 
-              disabled={!(formObject.author && formObject.title)}
-              type="submit" 
-              onClick={submitStory} 
-              className="btn btn-primary mt-2 mb-2">
-            PUBLISH
-            </button>
         </div>
+        <button
+          disabled={!(formObject.author && formObject.title)}
+          type="submit"
+          onClick={submitStory}
+          className="btn btn-primary mt-2 mb-2">
+          PUBLISH
+        </button>
+
       </form>
-    </div>
+    </div >
   )
 }
 
