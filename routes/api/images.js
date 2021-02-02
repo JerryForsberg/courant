@@ -7,7 +7,9 @@ const crypto = require('crypto');
 const path = require('path');
 
 
-const mongoURI = "mongodb+srv://thecourantgroup:storydata1@cluster0.oaeup.mongodb.net/uploads?retryWrites=true&w=majority"
+
+
+const mongoURI = "mongodb+srv://thecourantgroup:storydata1@cluster0.oaeup.mongodb.net/uploads?retryWrites=true&w=majority";
 
 const conn = mongoose.createConnection(mongoURI);
 // || "mongodb://localhost/courant"
@@ -38,6 +40,7 @@ const storage = new GridFsStorage({
         resolve(fileInfo);
       });
     });
+
   }
 });
 const upload = multer({ storage });
@@ -76,7 +79,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
   // var filename = req.body.imageUpload;
   //  upload.single(imageUpload);
   console.log("File uploaded 1");
-  console.log(req.file);
+  console.log(req.body.file);
   console.log(req.body);
 
   // gfs.files.find().toArray((err, files) => {
@@ -95,8 +98,8 @@ router.post('/upload', upload.single('file'), (req, res) => {
   //         file.isImage = false;
   //       }
   //     });
-      //   res.render('index', { files: files });
-    // }
+  //   res.render('index', { files: files });
+  // }
   // });
 
 });
