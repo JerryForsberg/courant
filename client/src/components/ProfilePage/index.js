@@ -5,7 +5,7 @@ import API from "../../utils/API";
 import { useCourantContext } from "../../utils/CourantContext"
 import StorySection from "../StorySection";
 
-// This is our main page that wraps around everything
+// This is our main page that wraps around everything --------------
 function ProfilePage() {
     const { logout } = useCourantContext();
 
@@ -31,7 +31,8 @@ function ProfilePage() {
     return (
 
         <>
-       
+       <StorySection />
+
         </>
         // <div className="col-10 content-area">
         //     <div className="row">

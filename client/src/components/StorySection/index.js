@@ -67,13 +67,13 @@ function StorySection() {
           {/* populated stories will go in here */}
           <h1>My Stories</h1>
           
-{/* if user not logged in, says stories.map is not a function */}
+{/* if user not logged in, or has no stories, says stories.map is not a function */}
 {/* redirect if not logged in */}
 {/* add isAuthenticated for login for every page */}
 
-          {Array.isArray(stories) ? (
+          {stories ? (
             <List>
-              {stories.map(story => (
+              {stories.split().map(story => (
                 <ListItem key={story._id}>
                   <Link to={"/story/" + story._id}>
                     <button className="btn">

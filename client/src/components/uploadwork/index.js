@@ -113,7 +113,7 @@ function UploadWork() {
       API.addStory({
         author: formObject.author,
         title: formObject.title,
-        textUpload: formObject.textUpload,
+        textUpload: formObject.textUpload
       })
         .then((res) => {
           // if no error, redirect to profile
@@ -124,7 +124,6 @@ function UploadWork() {
           console.log(`error: ${error}`);
         });
     }
-
   };
 
   return (
@@ -139,6 +138,7 @@ function UploadWork() {
               placeholder="Please title your work"
               onChange={handleInputChange}
             />
+            
             <input
               type="text"
               name="author"
@@ -146,8 +146,9 @@ function UploadWork() {
               placeholder="Author"
               onChange={handleInputChange}
             />
+
             <div className="textedit">
-              <CKEditor
+              {/* <CKEditor
                 editor={ClassicEditor}
                 name="textUpload"
                 data="<p>Tell your story...</p>"
@@ -156,9 +157,9 @@ function UploadWork() {
                   console.log('Editor is ready to use!', editor);
                 }}
                 onChange={handleInputChange}
-              />
+              /> */}
 
-              {/* <div>
+              <div>
                 <form className="form">
                   <textarea
                     className="form-control"
@@ -168,7 +169,7 @@ function UploadWork() {
                     placeholder="Enter Story Here"
                   />
                 </form>
-              </div> */}
+              </div>
 
             </div>
           </div>
