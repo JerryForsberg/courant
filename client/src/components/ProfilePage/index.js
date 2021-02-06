@@ -7,7 +7,7 @@ import StorySection from "../StorySection";
 
 // This is our main page that wraps around everything --------------
 function ProfilePage() {
-    const { logout } = useCourantContext();
+   /*  const { logout } = useCourantContext();
 
     const history = useHistory();
     const { id } = useParams();
@@ -26,7 +26,7 @@ function ProfilePage() {
 
     }, []);
 
-
+ */
 
     return (
 

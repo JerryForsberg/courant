@@ -5,38 +5,6 @@ import API from "../../utils/API";
 
 
 function profile() {
-    // Stores story info from the database
-    // const [profileStories, setProfileStories] = useState([]);
-
-    // // Sets up page redirect
-    // const history = useHistory();
-
-    // API Call for story Info
-    // useEffect(() => {
-    //     API.getAllStories()
-    //         .then((res) => {
-    //             // if (res.data.isAuthenticated === false) {
-    //             //   return logout(history);
-    //             // }
-    //             // if (res.data.length === 0) {
-    //             //   history.push("/add-vehicle");
-    //             // }
-    //             setProfileStories(res.data);
-    //         })
-    //         .catch((err) => console.log(err));
-    // }, []);
-
-
-    // const getLatestStories = () => {
-    //     API.getAllStories()
-    //         .then((res) => {
-    //             // if (res.data.isAuthenticated === false) {
-    //             //   return logout(history);
-    //             // }
-    //             setProfileStories(res.data);
-    //         })
-    //         .catch((err) => console.log(err));
-    // }
 
     return (
 
@@ -82,5 +50,3 @@ function profile() {
 }
 
 export default profile;
-
-{/* ---- NEED A NEW COMPONENT: STORIESCARD TO MAP THROUGH AND PUT ON PROFILE PAGE */ }
