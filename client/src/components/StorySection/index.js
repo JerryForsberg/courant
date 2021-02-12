@@ -1,137 +1,72 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../DeleteBtn";
-import { useParams, useHistory } from "react-router-dom";
 import API from "../../utils/API";
+import "./style.css";
 import { Link } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
-import { List, ListItem } from "../List";
 import { useCourantContext } from "../../utils/CourantContext";
+import { List, ListItem } from "../List";
 
+// This is where the stories wil display
+function StorySection({...props}) {
 
-function StorySection() {
-  // Setting our component's initial state
-  const { logout } = useCourantContext();
-  const { id } = useParams();
+  const oldArray = ['peter piper', 'picked a pair']
+  const [stories, setStories] = useState([]);
+  const {logout } = useCourantContext();
+
   const history = useHistory();
+  const { id } = useParams();
 
-  const [stories, setStories] = useState([])
-  const [formObject, setFormObject] = useState({})
-
-  // Load all stories and set them to stories
+  // Loads all stories and sets them to stories
   useEffect(() => {
-    grabUser()
-    loadStories()
-  }, [])
 
-
-function grabUser() {
     API.getUser(id)
-    .then((res) => {
-        if (res.data.isAuthenticated === false) {
-            return logout(history);
-        }
-    })
-    .catch((err) => console.log(err));
-}
-
-  // Loads all books and sets them to books
-  function loadStories() {
-    API.findAllStories()
       .then((res) => {
-        console.log(res.data)
+        if (res.data.isAuthenticated === false) {
+          return logout(history);
+        }
+        console.log("Get User successful")
+      })
+      .catch((err) => console.log(err));
+    
+    API.findAllStories()
+      .then(res =>
         setStories(res.data)
-        console.log("loaded stories")
-      })
+      )
       .catch(err => console.log(err));
-  };
+  }, []);
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteButton(id) {
-    API.deleteStory(id)
-      .then(res => loadStories())
-      .catch(err => console.log(err));
-  }
+  console.log(stories.length)
 
-  // Handles updating component state when the user types into the input field
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
-  };
+  return (
+    <>
+          {/* populated stories will go in here */}
+          <h1>My Stories</h1>
+          {stories.length ? (
+            <row>
+              {/* map () does not execute the function for array elements without values. */}
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (formObject.title && formObject.author) {
-      API.addStory({
-        title: formObject.title,
-        author: formObject.author,
-        textUpload: formObject.textUpload
-      })
-        .then(res => loadStories())
-        .catch(err => console.log(err));
-    }
-  };
-
-  
-  console.log(stories)
-
-
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </jumbotron>
-            <form>
-              <input
-                onChange={handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <input
-                onChange={handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <textarea
-                onChange={handleInputChange}
-                name="textUpload"
-              />
-              <btn
-                disabled={!(formObject.author && formObject.title)}
-                onClick={handleFormSubmit}
-              >
-                Submit Book
-              </btn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <jumbotron>
-              <h1>Books On My List</h1>
-            </jumbotron>
-            {stories.length ? (
-              <List>
-                {stories.map(story => (
-                  <ListItem key={story._id}>
-                    <Link to={"/books/" + story._id}>
+              
+              {stories.map(story => (
+                  <Link to={"/story/" + story._id}>
+                    <button className="btn">
                       <strong>
                         {story.title} by {story.author}
                       </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteButton(story._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
+                    </button>
+                  </Link>
+              ))}
+              </row>
+           
+          ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
 
+         {/* </Col>
+       </Row>
+    </Container> */}
+    </>
+  )
+}
 
 export default StorySection;
