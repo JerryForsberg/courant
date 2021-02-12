@@ -85,7 +85,7 @@ function UploadWork() {
 
   useEffect(() => {
 
-    API.getUser(id)
+    API.getUser()
       .then((res) => {
         if (res.data.isAuthenticated === false) {
           return logout(history);

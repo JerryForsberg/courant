@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import "./style.css";
-import { Link, Redirect } from "react-router-dom";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
 import { useCourantContext } from "../../utils/CourantContext";
 import DeleteBtn from "../DeleteBtn"
@@ -42,7 +41,7 @@ function StorySection() {
   }, [stories]);
 
   function grabUser() {
-    API.getUser(id)
+    API.getUser()
       .then((res) => {
         if (res.data.isAuthenticated === false) {
           return logout(history);
