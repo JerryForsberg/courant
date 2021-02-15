@@ -41,7 +41,7 @@ function StorySection() {
   }, [stories]);
 
   function grabUser() {
-    API.getUser()
+    API.getUser(id)
       .then((res) => {
         if (res.data.isAuthenticated === false) {
           return logout(history);

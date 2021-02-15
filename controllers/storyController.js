@@ -9,7 +9,6 @@ module.exports = {
           .catch((err) => res.status(422).json(err));
     },
 
-    // ------ UNSURE IF NEEDED ------- //
     findById: function (req, res) {
         db.Story.findById(req.params.id )
           .then((dbStory) => res.json(dbStory))
