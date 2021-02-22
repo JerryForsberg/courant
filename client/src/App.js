@@ -13,7 +13,7 @@ import SignupForm from "./pages/signup";
 import Upload from "./pages/uploadwork";
 import Profile from "./pages/profile";
 import Book from "./pages/book";
-import StoriesCard from "./components/StoriesCard";
+import StoriesCard from "./components/storiesCard";
 
 import { CourantProvider } from "./utils/CourantContext";
 

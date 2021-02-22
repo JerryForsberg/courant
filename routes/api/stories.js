@@ -2,7 +2,7 @@ const router = require("express").Router();
 const storyController = require("../../controllers/storyController");
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
-// router.use(isAuthenticated);
+router.use(isAuthenticated);
 
 router
   .route("/")

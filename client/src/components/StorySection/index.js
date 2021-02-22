@@ -53,11 +53,11 @@ function StorySection() {
     <>
       {/* populated stories will go in here */}
       <h1>My Stories</h1>
-      {stories.length ? (
+      {/* {stories ? (
         <row>
           {/* map () does not execute the function for array elements without values. */}
 
-          {stories.map(story => (
+          {/* {stories.map(story => (
             <Link to={"/story/" + story._id}>
               <button className="btn">
                 <strong>
@@ -69,7 +69,7 @@ function StorySection() {
         </row>
       ) : (
           <h3>No Stories to Display</h3>
-        )}
+        )} */}
 
       {/* </Col>
        </Row>

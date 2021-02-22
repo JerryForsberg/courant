@@ -2,7 +2,7 @@ const db = require("../models");
 const imageMimeTypes = ["image/jpeg", "image/png", "images/gif"];
 
 module.exports = {
- // find all stories for that specific user
+  // find all stories for that specific user
   findAllStories: function (req, res) {
     db.Story
       .find({ user: req.user._id })
@@ -18,20 +18,25 @@ module.exports = {
   },
 
   create: function (req, res) {
-    var story;
+    // var story;
     db.Story.create({
-      user: "5fd3143825c6639b0ccff9b7",
+      user: req.user._id,
       author: req.body.author,
       title: req.body.title,
-      coverImage: req.body.coverImage,
+      // coverImage: req.body.coverImage,
       textUpload: req.body.textUpload
-
-
     })
-    .then((dbStory) =>{ story = dbStory;
-    console.log("This is dbstory: " + dbStory)})
-    .catch((err) => res.status(422).json(err));
-    console.log("new story created", story);
+      .then((dbStory) => {
+        db.User.findOneAndUpdate(
+          // find story and update if needed and push to that specific user
+            { _id: req.user._id },
+            { $push: { stories: dbStory._id } }
+          );
+          // console.log("This is dbstory: " + dbStory)
+          return res.json(dbStory);
+      })
+      .catch((err) => res.status(422).json(err));
+    // console.log("new story created", story);
 
     // function saveCover(story, coverEncoded) {
     //   if (coverEncoded == null) return
@@ -43,15 +48,15 @@ module.exports = {
     // }
     // saveCover(story, req.body.coverImage)
 
-      // .then((dbStory) => {
-      //   db.User.findOneAndUpdate(
-      //     // find story and update if needed and push to that specific user
-      //     { _id: req.user._id },
-      //     { $push: { stories: dbStory._id } }
-      //   );
-      //   return res.json(dbStory);
-      // })
-      // .catch((err) => res.status(422).json(err));
+    // .then((dbStory) => {
+    //   db.User.findOneAndUpdate(
+    //     // find story and update if needed and push to that specific user
+    //     { _id: req.user._id },
+    //     { $push: { stories: dbStory._id } }
+    //   );
+    //   return res.json(dbStory);
+    // })
+    // .catch((err) => res.status(422).json(err));
 
 
   },

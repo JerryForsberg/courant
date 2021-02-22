@@ -85,7 +85,7 @@ function UploadWork() {
 
   useEffect(() => {
 
-    API.getUser()
+    API.getUser(id)
       .then((res) => {
         if (res.data.isAuthenticated === false) {
           return logout(history);
@@ -114,7 +114,7 @@ function UploadWork() {
         author: formObject.author,
         title: formObject.title,
         textUpload: formObject.textUpload,
-        coverImage: formObject.coverImage
+        // coverImage: formObject.coverImage
 
       })
 
@@ -152,14 +152,14 @@ function UploadWork() {
               placeholder="Author"
               onChange={handleInputChange}
             />
-            <input
+            {/* <input
               type="file"
               name="coverImage"
               className="form-control"
               class="filepond"
               placeholder="upload image"
               onChange={handleInputChange}
-            />
+            /> */}
             <textarea
               className="form-control"
               type="text"

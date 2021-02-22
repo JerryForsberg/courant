@@ -36,7 +36,7 @@ export default {
 
   // get all stories by user id
   findAllStories: () => {
-    return axios.get(apiBaseUrl + "/api/story");
+    return axios.get("/api/story");
   },
   
   // Gets the book with the given id
