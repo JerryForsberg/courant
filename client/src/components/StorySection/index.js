@@ -15,35 +15,30 @@ function StorySection() {
 
   const history = useHistory();
 
-  function grabUser() {
+  // Loads all stories and sets them to stories
+  useEffect(() => {
     API.getUser(id)
-    .then((res) => {
-      if (res.data.isAuthenticated === false) {
-        return logout(history);
-      }
-    })
-    .catch((err) => console.log(err));
+      .then((res) => {
+        if (res.data.isAuthenticated === false) {
+          return logout(history);
+        }
+      })
+      .catch((err) => console.log(err));
 
-  }
-
-  function getStories() {
     API.findAllStories()
     .then((res) => {
       if (res.data.isAuthenticated === false) {
         return logout(history);
+      }
+      if (res.data.length === 0) {
+        history.push("/upload");
       }
       else {
         setStories(res.data);
       }
     })
     .catch(err => console.log(err));
-  }
-
-  // Loads all stories and sets them to stories
-  useEffect(() => {
-    grabUser();
-    getStories();   
-
+ 
   }, []);
 
   console.log(stories.length);

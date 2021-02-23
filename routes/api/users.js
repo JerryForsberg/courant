@@ -2,8 +2,6 @@ const db = require("../../models");
 const passport = require("../../config/passport");
 const router = require("express").Router();
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
-const path = require("path");
-
 
 // User Routes ----------------------------------------------- ||
 router.post("/login", passport.authenticate("local"), (req, res) => {
@@ -32,7 +30,7 @@ router.post("/signup", (req, res) => {
 // logout route
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  res.status(200).sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 // checks and returns whether or not the user is authenticated

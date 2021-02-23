@@ -13,6 +13,7 @@ const cors = require("cors");
 let corsOptions = {
   origin: "http://localhost:3000"
 }
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,7 +26,7 @@ app.use(cors(corsOptions));
 
 // Passport init
 // Express Session
-// app.set('trust proxy', 1);
+app.set('trust proxy', 1);
 app.use(
   session({
     secret: "secret",
@@ -40,7 +41,6 @@ app.use(
 );
 
 
-
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
@@ -48,12 +48,9 @@ app.use(passport.session());
 // Add routes, both API and view
 app.use(routes);
 app.use(function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-})
-
-// Connect to the Mongo DB
-
-
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+// Connect to Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/courant",
   {

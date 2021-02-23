@@ -17,6 +17,7 @@ function ProfilePage() {
           if (res.data.isAuthenticated === false) {
             return logout(history);
           }
+        
         })
         .catch((err) => console.log(err));
     }, []);
