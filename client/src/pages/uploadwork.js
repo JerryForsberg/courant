@@ -1,6 +1,8 @@
-import React from "react";
-import Upload from "../components/uploadwork";
-import Navbar from "../components/navbar";
+import React, {Button} from "react";
+import Card from 'react-bootstrap/Card'
+import Nav from 'react-bootstrap/nav'
+import Upload from "../components/uploadwork/main";
+import Navbar from "../components/NavBars/mainNavbar";
 import TitleInfo from "../components/uploadwork/titleInfo";
 import GenreInfo from "../components/uploadwork/genreInfo";
 
