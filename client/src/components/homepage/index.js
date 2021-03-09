@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import Navbar from "../navbar-white";
+import Navbar from "../NavBars/navbar-white";
 import { Button } from "../button/Button";
 
 function Homepage() {

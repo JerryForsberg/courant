@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Container } from "../Grid";
 import API from "../../utils/API";
-import Navbar from "../navbar-white"
+import Navbar from "../NavBars/navbar-white";
 import "./style.css";
 
 function StoriesCard() {

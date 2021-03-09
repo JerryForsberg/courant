@@ -1,7 +1,7 @@
 import React from "react";
 import Disc from "../components/discover";
-import Sidenav from "../components/sidenav";
-import Navbar from "../components/navbar";
+import Sidenav from "../components/NavBars/sidenav";
+import Navbar from "../components/NavBars/mainNavbar";
 import Footer from "../components/footer"
 
 function Discover() {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { Button } from "../button/Button";
+import { Button } from "../../button/Button";
 
 function profnav() {
     const [button, setButton] = useState(true);

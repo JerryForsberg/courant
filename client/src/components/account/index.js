@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
-import Navbar from "../navbar"
-import Accnt from "../account"
+// import Navbar from "../navbar"
+// import Accnt from "../account"
 
 function Account () {
     return (
