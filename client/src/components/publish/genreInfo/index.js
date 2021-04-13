@@ -1,4 +1,5 @@
-import React, { useEffect, useState, Card } from "react";
+import React, { useEffect, useState } from "react";
+import Card from 'react-bootstrap/Card'
 // import { useParams, useHistory } from "react-router-dom";
 import "./style.css";
 // import API from "../../utils/API";

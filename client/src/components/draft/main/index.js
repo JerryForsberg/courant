@@ -165,9 +165,6 @@ function UploadWork() {
               placeholder="Enter Story Here"
             />
 
-
-
-
           </div>
         </div>
         <button
