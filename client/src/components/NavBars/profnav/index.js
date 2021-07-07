@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { Button } from "../button/Button";
+import { Button } from "../../button/Button";
 
 function profnav() {
     const [button, setButton] = useState(true);
@@ -46,9 +46,9 @@ function profnav() {
                     </ol>
                 </div>
 
-                <Link to="/upload">
-                {button && <Button buttonStyle="btn--primary">Upload Work</Button>}
-                </Link>
+                {/* <Link to="/upload">
+                {button && <Button buttonStyle="btn--primary"></Button>}
+                </Link> */}
             </div>
         </div>
 

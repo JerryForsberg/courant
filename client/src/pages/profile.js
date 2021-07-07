@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Profnav from "../components/profnav";
-import Navbar from "../components/navbar";
+import Profnav from "../components/NavBars/profnav";
+import Navbar from "../components/NavBars/mainNavbar";
 import Footer from "../components/footer";
 import Profile from "../components/ProfilePage";
 import { useCourantContext } from "../utils/CourantContext";
@@ -18,7 +18,6 @@ function ProfilePage() {
                 <Profnav />
                 <Profile />
                 <StorySection />
-                
             </div>
             <Footer />
         </div>

@@ -10,7 +10,7 @@ import Feed from "./pages/feed";
 import Home from "./pages/homepage";
 import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
-import Upload from "./pages/uploadwork";
+import Draft from "./pages/draft";
 import Profile from "./pages/profile";
 import Book from "./pages/book";
 import StoriesCard from "./components/StoriesCard";
@@ -28,7 +28,7 @@ function App() {
         <Route exact path="/feed" component={Feed} />
         <Route exact path="/login" component={LoginForm} />
         <Route exact path="/signup" component={SignupForm} />
-        <Route exact path="/upload" component={Upload} />
+        <Route exact path="/draft" component={Draft} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/story/:id">
             <StoriesCard /> 

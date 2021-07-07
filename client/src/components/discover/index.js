@@ -1,33 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
+import API from "../../utils/API";
+import { useHistory, useParams, Link } from "react-router-dom";
+import { useCourantContext } from "../../utils/CourantContext";
 
 function Discover() {
 
-    return (
+    const [stories, setStories] = useState([]);
+    const { logout } = useCourantContext();
 
+    const history = useHistory();
+    const { id } = useParams();
+
+    useEffect(() => {
+        findAllStories()
+    }, []);
+
+    function findAllStories() {
+        API.findAllStories()
+            .then(function (res) {
+                console.log(res.data);
+                return setStories([]);
+            })
+            .catch(err => console.log(err));
+    };
+    return (
         <div className="row">
             <div className="col-1g-10">
                 <div className="row">
                     <div className="col-5 d-flex">
-                        <img src="../images/example-img1.jpg" alt="book cover" className="discover-img" />
-                        <img src="../images/example-img2.jpg" alt="book cover" className="discover-img" />
-                        <img src="../images/example-img3.jpg" alt="book cover" className="discover-img" />
-                        <img src="../images/example-img4.jpg" alt="book cover" className="discover-img" />
-
+                        {stories.map(story => {
+                            return (
+                                <div className="card">
+                                    <img className="card-img-top" src={story.imageUpload}>
+                                        <Link to={"/api/story/" + story.id}>
+                                        </Link>
+                                    </img>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{story.title}</h5>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
-
                 </div>
-                <div className="row">
-                    <div className="col-5 d-flex">
-                        <img src="../images/example-img5.jpg" alt="book cover" className="discover-img" />
-                        <img src="../images/example-img6.jpg" alt="book cover" className="discover-img" />
-                        <img src="../images/example-img7.jpg" alt="book cover" className="discover-img" />
-                        <img src="../images/example-img8.jpg" alt="book cover" className="discover-img" />
-
-                    </div>
-
-                </div>
-
             </div>
         </div>
     );
@@ -47,4 +63,5 @@ export default Discover;
         </button>
     </div>
 </div> */}
-        
+
+// try to get text on discover page in a card leave space for photo. add data to local database and try to map through it to see if map function works. 
